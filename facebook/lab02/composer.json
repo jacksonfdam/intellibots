@@ -1,0 +1,20 @@
+{
+  "name": "intellibots/lab02",
+  "description": " Laboratório com a Facebook Messenger Bot PHP API",
+  "homepage": "https://github.com/jacksonfdam/intellibots",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Jackson Mafra",
+      "email": "jacksonfdam@gmail.com",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": ">=5.4.0"
+  },
+
+  "autoload": {
+    "psr-4": { "intellibots\\": "" }
+  }
+}
