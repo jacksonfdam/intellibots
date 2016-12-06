@@ -1,19 +1,14 @@
 <?php
 $verify_token = ""; // Verify token
 $token = ""; // Page token
+
 if (file_exists(__DIR__.'/config.php')) {
     $config = include __DIR__.'/config.php';
     $verify_token = $config['verify_token'];
     $token = $config['token'];
 }
-// autoload classes based on a 1:1 mapping from namespace to directory structure.
-spl_autoload_register(function ($className) {
-        $ds = DIRECTORY_SEPARATOR;
-        $dir = __DIR__.'/';
-        $className = str_replace('\\', $ds, $className);
-        $file = "{$dir}{$ds}{$classname}.php";
-        if (is_readable($file)) require_once $file;
-});
+
+require_once(dirname(__FILE__) . '/vendor/autoload.php');
 
 
 use intellibots\FbBotApp;
@@ -31,9 +26,9 @@ use intellibots\Messages\Adjustment;
 // Make Bot Instance
 $bot = new FbBotApp($token);
 if (!empty($_REQUEST['local'])) {
-    $message = new ImageMessage(1585388421775947, dirname(__FILE__).'/fb4d_logo-2x.png');
+    $message = new ImageMessage(1585388421775947, dirname(__FILE__).'/Messages-256.png');
     $message_data = $message->getData();
-    $message_data['message']['attachment']['payload']['url'] = 'fb4d_logo-2x.png';
+    $message_data['message']['attachment']['payload']['url'] = 'Messages-256.png';
         echo '<pre>', print_r($message->getData()), '</pre>';
     $res = $bot->send($message);
     echo '<pre>', print_r($res), '</pre>';
@@ -51,6 +46,13 @@ if (!empty($_REQUEST['hub_mode']) && $_REQUEST['hub_mode'] == 'subscribe' && $_R
             if (!empty($message['delivery'])) {
                 continue;
             }
+            
+            
+            // skip the echo of my own messages
+            if (($message['message']['is_echo'] == "true")) {
+                continue;
+            }
+            
             $command = "";
             // When bot receive message from user
             if (!empty($message['message'])) {
@@ -71,7 +73,7 @@ if (!empty($_REQUEST['hub_mode']) && $_REQUEST['hub_mode'] == 'subscribe' && $_R
                     break;
                 // When bot receive "image"
                 case 'local image':
-                    $bot->send(new ImageMessage($message['sender']['id'], dirname(__FILE__).'/fb4d_logo-2x.png'));
+                    $bot->send(new ImageMessage($message['sender']['id'], dirname(__FILE__).'/Messages-256.png'));
                     break;
                 // When bot receive "profile"
                 case 'profile':
@@ -176,6 +178,7 @@ if (!empty($_REQUEST['hub_mode']) && $_REQUEST['hub_mode'] == 'subscribe' && $_R
                 break;
                 // Other message received
                 default:
+                    if (!empty($command)) 
                     $bot->send(new Message($message['sender']['id'], 'Sorry. I don’t understand you.'));
             }
         }
