@@ -96,3 +96,10 @@ Após acessar a URL na formatação acima, a resposta da API do Telegram será a
 
 	https://api.telegram.org/bot(SEU_TOKEN)/setwebhook?url=
 
+### API
+https://core.telegram.org/methods
+
+ - Samples- https://core.telegram.org/bots/samples
+- https://github.com/akalongman/php-telegram-bot
+- https://github.com/irazasyed/telegram-bot-sdk
+- https://github.com/unreal4u/telegram-api
