@@ -82,3 +82,17 @@ curl -X DELETE -H "Content-Type: application/json" -d '{
  - https://bots.mockuuups.com/
 
  - https://chatbottle.co/
+
+#### Adicionar WebHook
+
+	https://api.telegram.org/bot(SEU_TOKEN)/setwebhook?url=https://(SUA_URL)/seubot.php
+
+Após acessar a URL na formatação acima, a resposta da API do Telegram será a seguinte:
+
+	{“ok”:true,”result”:true,”description”:”Webhook was set”}
+
+
+#### Remover WebHook
+
+	https://api.telegram.org/bot(SEU_TOKEN)/setwebhook?url=
+
