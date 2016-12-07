@@ -6,7 +6,7 @@ O heroku é uma das opções mais populares de plataforma como serviço (PaaS), 
 
 A ideia é que depois de tudo configurado (o que não é lá muita coisa) você só precisa executar um comando para ter sua aplicação no ar, nada de usar ftp, nem de se preocupar caso você suba alguma coisa com bug e principalmente em passar horas instalando dependências e configurando o servidor.
 
-Para começar você só precisa de três coisas: a primeira é se cadastrar lá no heroku, obvio, o [link de cadastro é esse](http://heroku.com) eles possuem um plano free com limitações, mas é o suficiente para o que vamos fazer, a segunda é ter o [git](https://git-scm.com/downloads) instalado e configurado no seu computador e por último instalar esse cara aqui que é o cinto de utilidades do heroku, esse programa possibilita toda a comunicação entre sua máquina e a plataforma de deploy.
+Para começar você só precisa de três coisas: a primeira é se cadastrar lá no heroku, obvio, o [link de cadastro é esse](http://heroku.com) eles possuem um plano free com limitações, mas é o suficiente para o que vamos fazer, a segunda é ter o [git](https://git-scm.com/downloads) instalado e configurado no seu computador e por último instalar esse cara [aqui](https://devcenter.heroku.com/articles/heroku-cli) que é o cinto de utilidades do heroku, esse programa possibilita toda a comunicação entre sua máquina e a plataforma de deploy.
 
 Para seguir em frente, aconselho que você tenha o minimo de conhecimento sobre o git ([esse artigo é um bom lugar para começar](http://rogerdudler.github.io/git-guide/index.pt_BR.html)) e não tenha medo de usar o terminal :p já que praticamente todo o processo vai ser feito com ele.
 
