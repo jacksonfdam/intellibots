@@ -132,10 +132,8 @@ Selecione com o mouse a palavra “Porto Alegre”
 
 
 No modal de opções que vai aparecer escolha a opção “@sys.any”
-
 Repita o mesmo processo para “Sao Paulo”, "Rio de Janeiro" e “Curitiba”
 
 
-Pronto, agora dê um nome à sua Intent e clique em “Save”!
-
+\o/ Pronto, agora dê um nome à sua Intent e clique em “Save”!
 Agora que você salvou sua Intent no canto direito superior em “Try it Now”, dê o seguinte comando “Previsão Recife”, se tudo correu bem na integração ele deve responder com um preview do conteúdo da previsão de Recife agora.
