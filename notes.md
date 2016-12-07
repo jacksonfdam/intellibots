@@ -16,3 +16,28 @@ API da empresa já foi usada por mais de 6 mil desenvolvedores para incorporar r
 A Wit.ai tem menos de dois anos de vida e sua plataforma permite que desenvolvedores incorporem recursos de reconhecimento de fala em seus apps, dispositivos digitais como termostatos e até robôs. Mais de 6 mil desenvolvedores já usaram sua tecnologia para criar apps e dispositivos de IoT, diz a empresa, com sede em Palo Alto, Califórnia.
 
 Em outubro de 2014, um ano depois de ter iniciado a empresa com seus próprios recursos, e usado uma sala nos escritórios da Pebble para trabalhar, o cofundador da Wit.ai, Alex Lebrun, conseguiu US$ 3 milhões em capital-semente (seed money) numa rodada de investimentos liderada por Chris Dixon, da Andreessen Horowitz, com participação da Ignition Partners, NEA, A-Grade, SVAngel, Eric Hahn, Alven Capital e TenOneTen.
+
+
+### Adicionando Greeting Text
+
+curl -X POST -H "Content-Type: application/json" -d '{
+  "setting_type":"greeting",
+  "greeting":{
+    "text":"OLá {{user_first_name}}, sou um dos Bots do curso de Intellibots."
+  }
+}' "https://graph.facebook.com/v2.6/me/thread_settings?access_token=PAGE_ACCESS_TOKEN"    
+
+
+### Removendo 
+
+curl -X DELETE -H "Content-Type: application/json" -d '{
+  "setting_type":"greeting"
+}' "https://graph.facebook.com/v2.6/me/thread_settings?access_token=PAGE_ACCESS_TOKEN"   
+
+
+### Send a Structured Message
+
+!(SM)[https://github.com/jw84/messenger-bot-tutorial/raw/master/demo/shot5.jpg]
+
+
+
