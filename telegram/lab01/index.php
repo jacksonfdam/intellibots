@@ -18,17 +18,17 @@ function processMessage($message) {
     if (strpos($text, "/start") === 0) {
 		//envia a mensagem ao usuário
       sendMessage("sendMessage", array('chat_id' => $chat_id, "text" => 'Olá, '. $message['from']['first_name'].
-		'! Eu sou um bot que informa a previsao do tempo na sua cidade? Para começar, escolha qual loteria você deseja ver o resultado', 'reply_markup' => array(
+		'! Eu sou um bot que informa a previsao do tempo na sua cidade?', 'reply_markup' => array(
         'keyboard' => array(array('São Paulo', 'Porto Alegre'),array('Curitiba','Florianópolis')),
         'one_time_keyboard' => true)));
     } else if ($text === "São Paulo") {
-      sendMessage("sendMessage", array('chat_id' => $chat_id, "text" => getResult('megasena', $text)));
+      sendMessage("sendMessage", array('chat_id' => $chat_id, "text" => getWeather($text)));
     } else if ($text === "Porto Alegre") {
-      sendMessage("sendMessage", array('chat_id' => $chat_id, "text" => getResult('quina', $text)));
+      sendMessage("sendMessage", array('chat_id' => $chat_id, "text" => getWeather($text)));
     } else if ($text === "Florianópolis") {
-      sendMessage("sendMessage", array('chat_id' => $chat_id, "text" => getResult('lotomania', $text)));
+      sendMessage("sendMessage", array('chat_id' => $chat_id, "text" => getWeather($text)));
     } else if ($text === "Curitiba") {
-      sendMessage("sendMessage", array('chat_id' => $chat_id, "text" => getResult('lotofacil', $text)));
+      sendMessage("sendMessage", array('chat_id' => $chat_id, "text" => getWeather( $text)));
     } else {
       sendMessage("sendMessage", array('chat_id' => $chat_id, "text" => 'Desculpe, mas não entendi essa mensagem. :('));
     }
@@ -59,6 +59,3 @@ $update = $response["result"][$length-1];
 if (isset($update["message"])) {
   processMessage($update["message"]);
 }
-print_r(getWeather('Porto Alegre'));
-
-?>
