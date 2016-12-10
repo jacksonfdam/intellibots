@@ -34,264 +34,268 @@
   a:link, a:hover, a:active, a:visited{
     color: white;
   }
+  .white{
+    background: url(https://2016.saopaulo.wordcamp.org/files/2016/10/bg-site.png) 0 300px no-repeat white;
+    color: rgba(3,101,192,0.8);
+  }
 </style>
 </head>
 <body>
 <textarea id="source" style="display:none;">
-    class: center, middle
-    # ChatBots e Intellibots
 
+class: center, middle, white
+# Vendas inteligentes com intelibots
 
-    ![ChatBots e Intellibots](https://cldup.com/1kMP-3J8Mm.png)    
+<img src="https://2016.saopaulo.wordcamp.org/files/2016/10/logo-WCSP2016-1.png" height="100" /><br/>
+<img src="https://cldup.com/1kMP-3J8Mm.png" height="350" title="ChatBots e Intellibots" />
 
-    ---
+---
 
-    ##JACKSON FERREIRA DE ANDRADE MAFRA
+##JACKSON FERREIRA DE ANDRADE MAFRA
 
-    Desenvolvedor há 15 anos com background em projetos de e-commerce e real estate, desde 2009 com interesses focados para o desenvolvimento de interfaces móveis e aplicações MEAP.
+Desenvolvedor há 15 anos com background em projetos de e-commerce e real estate, desde 2009 com interesses focados para o desenvolvimento de interfaces móveis e aplicações MEAP.
 
-    Me chama lá...
+Me chama lá...
 
-    [http://about.me/jacksonfdam](http://about.me/jacksonfdam)
+[http://about.me/jacksonfdam](http://about.me/jacksonfdam)
 
-    [https://bitbucket.org/jacksonfdam](https://bitbucket.org/jacksonfdam)
+[https://bitbucket.org/jacksonfdam](https://bitbucket.org/jacksonfdam)
 
-    [https://github.com/jacksonfdam](https://github.com/jacksonfdam)
+[https://github.com/jacksonfdam](https://github.com/jacksonfdam)
 
-    [http://linkedin.com/in/jacksonfdam](http://linkedin.com/in/jacksonfdam)
+[http://linkedin.com/in/jacksonfdam](http://linkedin.com/in/jacksonfdam)
 
-    [@jacksonfdam](http://www.twitter.com/jacksonfdam)
+[@jacksonfdam](http://www.twitter.com/jacksonfdam)
 
-    ---
-    ## What will be covered
+---
 
-    The following platforms for bot development will be covered 
 
-    - Facebook Messanger
-    - Skype
-    - Slack
-    - Telegram
+class: center, middle   
 
-    What AI engines will be covered?
+# Intelligent Bots
 
-    - api.ai 
-    - wit.ai
 
-    Framework
+### “Acreditamos que enviar mensagens é uma das poucas coisas que as pessoas fazem mais do que utilizar as redes sociais.”
 
-    - Microsoft BOT framework
+*Mark Zuckerberg, in a public Q&A in November 2014*
 
+---
 
-    ---
-    class: center, middle   
+##O que são chatbots?
 
-    # Intelligent Bots
 
+Um chatbot é um serviço, alimentado por regras e por vezes inteligência artificial, com o qual você interage através de uma interface de bate-papo. 
 
-    ### “Messaging is one of the few things that people do more than social networking.”
+O serviço poderia ser qualquer número de coisas, variando de Funcional ao divertimento, e poderia viver em todo o produto principal do bate-papo (Facebook Messenger, Slack, Telegram, mensagens de texto, etc.).
 
-    *Mark Zuckerberg, in a public Q&A in November 2014*
+---
+##Chatbots
 
-    ---
-    ## What are chatbots?
+<img src="https://blip.ai/img/interfaces.png?1adf845add5b34d275b2ba1a880ef2cd"  width="70%" height="100%" />
 
+---
 
-    A chatbot is a service, powered by rules and sometimes artificial intelligence, 
-    that you interact with via a chat interface. The service could be any number of things, ranging from 
-    functional to fun, and it could live in any major chat product (Facebook Messenger, Slack, Telegram, Text Messages, etc.).
+## Como funcionam os chatbots?
 
 
-    ---
-    ## How do chatbots work?
+Fazer um chatbot é mais como escrever um script software. Todos os possíveis cenários e prompts têm de ser mapeados, juntamente com as respostas eo fluxo de conversas esperadas.
+<img src="https://cdn-images-1.medium.com/max/2000/1*QNDwvpEdMtiv18XIJe0Ukg.png" width="100%;" />
 
+---
+## Como funcionam os chatbots?
 
-    Making a chatbot is more like script writing than usual software development. All possible scenarios and prompts have to be mapped, alongside responses and the flow of expected conversations.
+Viv e Siri (Amazon Alexa,Cortana, Google Assistant) sofrem com isso; Eles visam cobrir tudo, e no processo de compromisso sobre a qualidade. 
 
-    <img src="https://cdn-images-1.medium.com/max/2000/1*QNDwvpEdMtiv18XIJe0Ukg.png" width="100%;" />
+Para entender por que um amplo escopo é problemático, precisamos primeiro entender como funcionam os chatbots.
 
-    ---
-    ## Why might chatbots be important? 
+---
+## Como funcionam os chatbots?
 
-    For the first time ever, people are using messenger apps more than they are using social networks. Chatbots can give brands a presence within messaging platforms, to interact and help customers at just the right moment.
+Chatbots basicamente têm duas partes para eles: o "cérebro" e o "corpo".
 
-    ---
-    class: center, middle   
+A primeira parte é o "cérebro". Para entender o que este cérebro é, pense em um carro. 
 
-    ## Facebook Messenger Bots    
+Dentro de um carro você tem um motor que faz o carro se mover. 
 
-    ---
+E anexado a esse motor você tem um corpo que você pode personalizar para suas necessidades - você poderia ter um quatro por quatro, um roadster esportivo ou apenas um sedan normal. O mesmo motor poderia ser usado em muitas maneiras diferentes dependendo do corpo que você atribui a ele.
 
-    ## Facebook Messenger Bots
+Isso é tipo de como chatbots trabalho, também. O "cérebro" é como este sistema nervoso gigante que toma palavras que os humanos dizem e converte em código acionável. Em um chatbot de alcance muito estreito, há apenas um tanto que um humano pode dizer.
 
-    The Messenger Platform gives you the ability to have conversations with people on Messenger. There are new tools for you to build and promote your bot so you can create a custom experience for your unique audience.
+---
+## Como funcionam os chatbots?
 
-    ### Discovering Your Bot
+A segunda parte do chatbots é o "corpo". Como eu disse, esta é a parte "fácil" dele. Ele precisa ser construído e personalizado, mas é literalmente apenas um vasto corpo de conhecimento. A compilação pode levar tempo, dependendo da indústria. 
 
-    Using plugins, codes and links people can discover your bot and start conversations. Using Customer Matching, you can reach people on Messenger if you have their phone number and they've agreed to be contacted by you.
+Para algo como reservas de viagens através de um chatbot, o corpo de conhecimento que você precisa não é imenso. 
 
-    ### Web Plugins
+Você pode literalmente conectar seu chatbot na API do TripAdvisor e entregar um produto bastante robusto.
 
-    There are two new plugins you can drop onto your website that work on desktop and mobile web. When people click the "Send to Messenger" plugin, you can initiate a conversation with them in Messenger. The "Message Us" plugin takes the person directly to Messenger and allows them to initiate a conversation with you. On desktop, the person will be sent to messenger.com and on mobile they'll be sent to the Messenger native app.
-    
-    ---
+---
 
-    ## Facebook Messenger Bots
+## Por que os chatbots podem ser importantes?
 
-    ### Customer Matching
+Pela primeira vez, as pessoas estão usando aplicativos de messenger mais do que estão usando redes sociais. Os Chatbots podem dar às marcas uma presença nas plataformas de mensagens, para interagir e ajudar os clientes no momento certo.
 
-    Customer matching allows you to reach people in Messenger if you have their phone number and their consent to be contacted by you. In conversations on Messenger, people will see you as a brand and not just a short code. Conversations initiated through Customer Matching will be received as Message Requests allowing people to be reached only by the bots they want to communicate with.
-    
-    <img src="https://scontent.fpoa8-2.fna.fbcdn.net/t39.2178-6/12995553_268475126826430_1088661696_n.png" class="content" />
-    
+---
 
-    ---
+class: center, middle
 
-    ## Facebook Messenger Bots
+##Sempre disponível. 24hs/dia
 
-    ### Messenger Codes and Links
+---
 
-    Place a Messenger Code anywhere and people can scan it to start a conversation with you.
+## Chatbots não foram criados apenas para suporte
 
-    <img src="https://cldup.com/nvRVxWmmL0-2000x2000.jpeg" class="content" />
-    
-    ---
+Transacionais — Permite realizar transações de e-commerce, acompanhar ou fazer pedidos.
 
-    ## Facebook Messenger Bots
+Atendimento ao Cliente — Permite o total engajamento com a empresa e a solicitação de serviços, como fazer check in na companhia aérea ou trocar os detalhes do voo.
 
-    ### Welcome Screen
+Temáticos — Oferece especialistas e traz as últimas notícias ou informações de temas de interesse.
 
-    If a person starts a new conversation with your bot, you can set expectations with a welcome message and call-to-action to kickoff the experience. People who click the "Message Us" plugin or find you through search will see your welcome screen.
+Entretenimento — Oferece conteúdos de diversão e humor, como conversar com um personagem de uma série de comédia.
 
-    <img src="https://scontent.fgru5-1.fna.fbcdn.net/t39.2365-6/14785410_1842795389288397_7118614328378392576_n.png" class="content" />
+<img src="https://cdn-images-1.medium.com/max/320/1*Ff1ut58WaQTDnWcCAJK_pA.gif" class="content" />
 
-    ---
+---
+##Chatbots
 
-    ## Facebook Messenger Bots
+Por exemplo, interagir com um chat bot para pedir comida (desde que o bot seja inteligente e eficiente) é algo que parece natural e certamente mais fácil do que ter que ligar para o restaurante, até por que o chat bot pode lembrar o meu nome, endereço e método de pagamento, o que agilizaria muito o meu pedido (após o primeiro).
 
-    ### Structured Templates
 
-    You can format your messages in a variety of ways. Send simple text and images, or use our structured templates to customize your message bubbles. Structured templates allow you to render an image, text and multiple buttons in one message.
+---
 
-    <img src="https://scontent.fgru5-1.fna.fbcdn.net/t39.2178-6/12679454_1026083487461743_881543663_n.png" class="content"/>
-    ---
+class: center, middle
 
-    ## Facebook Messenger Bots
+## Apps x Chatbots
 
-    ### User Controls
+Aplicativos mobile que serão substituidos por chat bots são aqueles muito simples ou com funcionalidade muito específica.
 
-    We’ve updated Messenger to provide people with even more ways to control the conversation and make sure they can reach the businesses they care about.
+---
 
-    <img src="https://scontent.fgru5-1.fna.fbcdn.net/t39.2178-6/12057143_198218393902993_755928037_n.png" class="content" />
-    ---
+## Apps x Chatbots
 
-    ## Facebook Messenger Bots
+  " Por exemplo, semana passada eu fui de São Paulo pro Rio de Janeiro e notei que cada um dos aeroportos que passei tinha seu próprio app mobile. A última coisa que eu quero é ter que baixar um mobile app de cada aeroporto que eu for para obter informações sobre os voo."
 
-    ### Entry Points
-    
+  Se existisse um chat bot da ANAC, por exemplo, onde eu pudesse enviar uma mensagem e receber informações dos voos de qualquer aeroporto, eu provavelmente usaria.
 
-    - If your app is Public, you can be discovered through Search in Messenger
-    - By clicking on the "Send Message" button on your Page
-    - By scanning your Messenger Code using their phone camera
-    - By clicking on your Messenger Link with the format https://m.me/PAGE_USERNAME
-    - Through our Send To Messenger or Message Us web plugins
-    - Phone Number (Customer) Matching
 
-    ---
+---
 
-    ## Facebook Messenger Bots
+##Bots + Apps
 
-    #### 📡 How to share your bot
+Uma tendência que deve aparecer no mercado é a solução híbrida (chat bot + mobile app). Isto é, os chat bots podem vir a ser o primeiro ponto de contato de muitos apps mobile. Você interage primeiramente com o bot para obter informações básicas, e quando precisar da funcionalidade completa o bot te enviará o link para baixar e instalar o app.
 
-    #### *Add a chat button to your webpage*
+Os chat bots também podem fornecer uma interface alternativa para alguns apps. Por exemplo, o Uber pode permitir que seus usuários solicitem um carro diretamente o Messenger ou WhatsApp, e o resto do serviço continuará funcionando pelo app.
 
-    Go [here](https://developers.facebook.com/docs/messenger-platform/plugin-reference) to learn how to add a chat button your page.
+---
 
-    #### *Create a shortlink*
+class: center, middle
 
-    You can use https://m.me/<PAGE_USERNAME> to have someone start a chat.
+##Chatbots parecem legais em demos, mas a interface do usuário é realmente muito complicada
 
+---
+class: center, middle
+##ChatBots
 
-    ---
+Os Chatbots também são, um ótimo substituto para as form longos. Eles são muito mais humanos e palatáveis (atraentes) do que forms. 
 
-    ## Facebook Messenger Bots
+<img src="http://globalbot.com.br/assets/img/32.png" class="content" />
 
-    ### 💡 What's next?
+---
+class: center, middle
+##ChatBots
 
-    - You can learn how to get your bot approved for public use [here](https://developers.facebook.com/docs/messenger-platform/app-review).
+Assim, uma boa interface de usuário (UI) é mais importante para a funcionalidade de um chatbot do que o bom Natural Language Processing (NLP).
 
-    - You can also connect an AI brain to your bot [here](https://wit.ai)
+---
+class: center, middle
+##ChatBots
 
-    - Read about all things chat bots with the ChatBots Magazine [here](https://medium.com/chat-bots)
+E as pessoas não escrevem bem. O texto que eles introduzem pode estar cheio de erros gramaticais e ortográficos e coloquialismos que são obrigados a confundir a AI infeliz.
 
-    - You can also design Messenger bots in Sketch with the [Bots UI Kit](https://bots.mockuuups.com)!
+<img src="https://cldup.com/jJsM-BuY83.thumb.jpg" class="content" />
 
 
-    ---
-    class: center, middle   
+---
+##Canais
 
+<img src="https://cldup.com/5hf_M7mxzm-3000x3000.jpeg" height="100%" width="100%" />
 
-    ## Telegram Bots
+---
+##Canais
 
-    
-    ---
+###Facebook Messenger
+O **Facebook Messenger** é uma das plataformas de mensagens mais populares, com mais de 1 bilhão de usuários ativos mensais. Após alguns meses de o Facebook ter aberto sua plataforma de bot para os desenvolvedores, mais de 23.000 desenvolvedores estavam construindo bots. Até agora, eles lançaram mais de 18.000 bots. Bots do Facebook Messenger estão amplamente associados às páginas do Facebook, o que é bastante onipresente entre as empresas.
 
-    ## Telegram Bots
+<img src="https://blip.ai/img/canal-fb.png?944a3fdb752a445495c0c367421ce8e8" class="content" />
 
-    The Bot API is an HTTP-based interface created for developers keen on building bots for Telegram.
+---
+##Canais
 
-    ---
+###Telegram
+O **Telegram** é um relativamente novo aplicativo de mensagens. Ele foi lançado em 2013 e agora tem 100 milhões de usuários ativos mensais. Um diferencial importante do Telegram são seus recursos avançados de segurança e criptografia. O serviço tem suporte para bots desde junho de 2015. De forma semelhante ao Facebook Messenger, seus bots exibem elementos ricos de interface de usuários, como botões e cartões formatados.
 
-    ## Telegram Bots
+<img src="https://blip.ai/img/canal-telegram.png?007f8ede435af982def40faa0e3d1489" class="content" />
 
-    ### What can I do with bots?
 
-    ####Get customized notifications and news. 
-    A bot can act as a smart newspaper, sending you relevant content as soon as it's published.
-    Forbes Bot, TechCrunch Bot
+---
+##Canais
 
-    ####Integrate with other services. 
-    A bot can enrich Telegram chats with content from external services.
-    Image Bot, GIF bot, IMDB bot, Wiki bot, Music bot, Youtube bot, GitHub bot  
+###Twitter
 
-    ---
 
-    ## Telegram Bots
+O **Twitter** é uma plataforma pública de mensagens com cerca de 300 milhões de usuários ativos mensais. Bots sempre foram uma parte do Twitter como usuários “não-humanos”. Ao usar a API do Twitter, um bot pode seguir pessoas e enviar tweets.
 
-    ### What can I do with bots?
+---
+##Canais
 
-    ####Create custom tools. 
-    A bot may provide you with alerts, weather forecasts, translations, formatting or other services. Markdown bot, Sticker bot, Vote bot, Like bot
+###Slack
 
-    ####Build single  and multiplayer games. 
-    A bot can offer rich HTML5 experiences, from simple arcades and puzzles to 3D-shooters and real-time strategy games. GameBot, Gamee
+O **Slack** é uma plataforma de mensagens de grupo voltada para equipes de trabalho. Em fevereiro de 2016, registrou 2,3 milhões de usuários ativos mensais, e está crescendo rapidamente. O Slack é um dos pioneiros na atual onda de renascimento dos chatbots. O serviço fornece uma das primeiras bot stores na indústria para que as equipes possam descobrir e instalar bots facilmente. Como esperado, a maioria dos bots do Slack está relacionada a trabalho e produtividade.
 
-    ####Build social services. 
-    A bot could connect people looking for conversation partners based on common interests or proximity. HotOrBot
+---
+##Canais
 
+###**SMS** e **e-mail**
 
-    ---
+**SMS** e **e-mail** são plataformas de mensagens tradicionais com o maior alcance de usuários. Dito isso, o número de mensagens enviadas usando aplicativos móveis, tais como Facebook Messenger, ultrapassou em muito o SMS nos últimos anos. Você pode usar APIs de telecomunicações, como Twilio, para construir bots SMS, e bots de e-mail podem ser construídos nos protocolos de e-mail abertos da Internet ou usando fornecedores de API especiais, como lonelybots. A plataforma de e-mail já tem chatbots úteis, por exemplo, o assistente inteligente de agendamento x.ai bot.
 
-    ## Telegram Bots
 
-    ### How are bots different from humans?
+---
+##Showtime
+https://botframe.com/editor/NsnXw3Uhpm#
 
-    - Bots have no online status and no last seen timestamps, the interface shows the label ‘bot’ instead.
-    - Bots have limited cloud storage — older messages may be removed by the server shortly after they have been processed.
-    - Bots can't initiate conversations with users. A user must either add them to a group or send them a message first. People can use telegram.me/<bot_username> links or username search to find your bot.
-    - Bot usernames always end in ‘bot’ (e.g. @TriviaBot, @GitHub_bot).
-    - When added to a group, bots do not receive all messages by default (see Privacy mode).
-    - Bots never eat, sleep or complain (unless expressly programmed otherwise).
+<img src="https://cldup.com/uJhzAbyxCy.thumb.jpg" class="content" />
+---
+##Showtime
 
-    ---
+https://botsociety.io/s/5844923e8874bb16bd9628d9
 
+<img src="https://cldup.com/v3qG5P_NsW.thumb.jpg" class="content" />
+---
 
-    class: center, middle
-    ## Questions?
-    ---
-    class: center, middle
-    ## Thank You.
+class: center, middle
+## Questions?   
 
-    ---
+---
+## Referências    
+
+- https://moqups.com/
+- https://bots.mockuuups.com/
+- https://zapier.com/
+- (If This Then That)https://ifttt.com/
+- https://www.luis.ai/
+- https://www.api.ai/
+- https://www.wit.ai/
+- https://botlist.co/
+- Chatbotsbrasil : http://chatbotsbrasil.take.net
+- Blip - https://blip.ai/
+- TolvNow - https://www.tolvnow.com/
+- Docs Bot framework : https://docs.botframework.com/en-us/
+
+---
+class: center, middle
+## Thank You.
 
 </textarea>
 <script src="https://gnab.github.io/remark/downloads/remark-latest.min.js">
