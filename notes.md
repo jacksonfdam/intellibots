@@ -83,6 +83,10 @@ curl -X DELETE -H "Content-Type: application/json" -d '{
 
  - https://chatbottle.co/
 
+ - https://botpublication.com/10-bot-building-platforms-and-why-you-need-to-build-a-bot-for-your-business-b86fd26ba9f9#.t40b24vge
+
+ - https://brasil.uxdesign.cc/o-papel-de-ux-nas-interfaces-conversacionais-d1bcd8b8db26#.2s2qwbwra
+
 #### Adicionar WebHook
 
 	https://api.telegram.org/bot(SEU_TOKEN)/setwebhook?url=https://(SUA_URL)/seubot.php

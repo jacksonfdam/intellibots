@@ -1,0 +1,12 @@
+{
+    "require": {
+        "irazasyed/telegram-bot-sdk": "dev-master",
+        "vlucas/phpdotenv": "^2.4"
+    },
+    "autoload":{
+        "psr-4":{
+            "Commands\\":"src/Commands/",
+            "Base\\":"src/base/"
+        }
+    }
+}

@@ -1,0 +1,14 @@
+# .evn
+.env
+
+# composer dir and files
+vendor
+composer.phar
+
+# Eclipse
+.buildpath
+.project
+.settings
+
+# VI
+*.swp
