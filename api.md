@@ -79,6 +79,7 @@ Mande um “Hello” e veja se ele responde corretamente.
 No menu à esquerda  clique em adicionar mais uma Intent.
 
 Dê um nome para sua nova Intent e no campo “User Says” coloque essas opções “Estou bem”, “Tudo bem”, “Estou Ok”, “Bem” e outras expressões que se encaixem em uma reposta a pergunta “como você está?”
+
 ![captura-de-tela-de-2016-09-13-20-53-47](http://i1.wp.com/onebitcode.com/wp-content/uploads/2016/09/Captura-de-tela-de-2016-09-13-20-53-47.png?w=767)
 
 No campo “Speech Response” coloque as seguintes opções “Fico feliz que você está bem”, “Que bom que você está bem”.
@@ -92,6 +93,7 @@ Pronto o Bot já sabe um cumprimento.
 ###PROGRAMANDO O BOT PARA DIZER QUAIS SÃO SUAS HABILIDADES ATUAIS
 
 Para fazer isso basta você criar um “Intent” que responde qual a habilidade atual do seu “Bot”. Algo como: “Quais são suas habilidades Bot?”, “Quais habilidades você tem?” ou até mesmo “O que você sabe fazer?” e o Bot pode responder algo como “Eu sei somar dois números”.
+
 Fica como exercício para você fazer isso na plataforma do Api.ai 
 
 ### VAMOS ADICIONAR A URL DO APP AO API.AI
@@ -136,4 +138,5 @@ Repita o mesmo processo para “Sao Paulo”, "Rio de Janeiro" e “Curitiba”
 
 
 \o/ Pronto, agora dê um nome à sua Intent e clique em “Save”!
+
 Agora que você salvou sua Intent no canto direito superior em “Try it Now”, dê o seguinte comando “Previsão Recife”, se tudo correu bem na integração ele deve responder com um preview do conteúdo da previsão de Recife agora.
