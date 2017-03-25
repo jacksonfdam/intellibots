@@ -107,3 +107,27 @@ https://core.telegram.org/methods
 - https://github.com/akalongman/php-telegram-bot
 - https://github.com/irazasyed/telegram-bot-sdk
 - https://github.com/unreal4u/telegram-api
+
+### Links Adicionais Aula 25/03/2017
+
+http://www.botsfloor.com/botstash/products/?category=Prototyping
+http://www.botsfloor.com/botstash/
+http://botter.co/
+https://botanalytics.co/
+https://www.crunchbase.com/organization/chatmetrics#/entity
+https://www.getbotmetrics.com/
+https://bot-metrics.com/
+https://www.botmetric.com/
+
+Os top 7 casos de messenger bots para marcas (e por que eles são incríveis)
+https://www.sprinklr.com/pt-br/the-way/os-top-7-casos-de-messenger-bots-para-marcas-e-por-que-eles-sao-incriveis/
+
+https://botmock.com/
+https://botpreview.com/
+
+### Comunidade
+https://medium.com/botsbrasil
+http://chatbotsbrasil.take.net/
+http://www.botsbrasil.com.br/
+
+
