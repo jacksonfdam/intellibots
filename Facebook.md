@@ -1,9 +1,8 @@
-#Facebook
+# Facebook
 
 [Bots for Messenger Platform](https://developers.facebook.com/docs/messenger-platform/product-overview) é fácil o suficiente para criar que os engenheiros do Facebook foram capazes de dar um exemplo de trabalho de bots simples em cerca de 10 minutos durante a conferência de desenvolvedores F8 em abril deste ano.
 
 As etapas gerais que um desenvolvedor precisa seguir para começar a criar um bot incluem:
-
 
  - Criar um aplicativo do Facebook e uma página do Facebook
  - Configurar os [webhooks](https://developers.facebook.com/docs/messenger-platform/implementation#setup_webhook)
@@ -42,7 +41,7 @@ Feito isso, será exibida uma página com os detalhes do app recém-criado.
 
 ![FacebookApp](https://cldup.com/-JiCE_rI2Z.thumb.jpg)
 
-##Obter Access Token e Definir Webhook
+## Obter Access Token e Definir Webhook
 
 Com o app criado, o próximo passo é obter o Access Token e definir o link do Webhook. Para isso, no menu no lado esquerdo da tela do app, clique em “Adicionar Produto”. Quando isso for feito, uma tela semelhante a da imagem abaixo será aberta. 
 
