@@ -1,4 +1,4 @@
-#Api.ai
+# Api.ai
 
 ## Crie uma conta no Api.ai
 O Api.ai é um plataforma que vai facilitar muito a criação de um Bot que pode responder de maneira fácil perguntas de texto e áudio.  Acesse o Link e crie sua conta: [Criar Conta](https://console.api.ai/api-client/#/signup)
@@ -9,7 +9,7 @@ O Api.ai é uma plataforma muito bacana aonde você pode configurar rapidamente 
 
 O Api.ai é gratuito até 6000 chamadas mensais, claro que isso é pouco para uma aplicação profissional, porém para nossos propósitos é suficiente.
 
-###AGORA VAMOS CONECTAR O API.AI AO NOSSO APP DO FACEBOOK
+### AGORA VAMOS CONECTAR O API.AI AO NOSSO APP DO FACEBOOK
 
  - Acesse sua conta do Api.ai: Acessar 
 
@@ -90,7 +90,7 @@ Primeiro você diz “Olá”, depois quando o bot perguntar se você está bem,
 
 Pronto o Bot já sabe um cumprimento. 
 
-###PROGRAMANDO O BOT PARA DIZER QUAIS SÃO SUAS HABILIDADES ATUAIS
+### PROGRAMANDO O BOT PARA DIZER QUAIS SÃO SUAS HABILIDADES ATUAIS
 
 Para fazer isso basta você criar um “Intent” que responde qual a habilidade atual do seu “Bot”. Algo como: “Quais são suas habilidades Bot?”, “Quais habilidades você tem?” ou até mesmo “O que você sabe fazer?” e o Bot pode responder algo como “Eu sei somar dois números”.
 
@@ -108,7 +108,7 @@ Um campo deve aparecer para você colocar o link do seu aplicativo.
 
 Pronto agora é só clicar em “Salvar”
 
-###ÚLTIMO PASSO!  FAZER O API.AI CHAMAR NOSSA API
+### ÚLTIMO PASSO!  FAZER O API.AI CHAMAR NOSSA API
 
 Agora é aonde a mágica finalmente acontece, vamos fazer o Api.ai chamar nossa Api para responder a uma pergunta do usuário.
 
