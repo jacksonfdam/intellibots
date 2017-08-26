@@ -19,10 +19,11 @@ Link para visualizar os [Slides](http://cdn.rawgit.com/jacksonfdam/intellibots/m
 ## Primeiros passos
 
  1. [Visão Geral](ebook.md)
- 2. [Configurando o Ambiente Online](heroku.md)
- 2. [Configurando o Bot no Messenger](Facebook.md)
- 3. [Configurando o Bot no Telegram](Telegram.md)
- 4. [Detectando Intenções com o API.ai](api.md)
+ 2. [Configurando o Ambiente Local](Ngrok.md)
+ 3. [Configurando o Ambiente Online](heroku.md)
+ 4. [Configurando o Bot no Messenger](Facebook.md)
+ 5. [Configurando o Bot no Telegram](Telegram.md)
+ 6. [Detectando Intenções com o API.ai](api.md)
 
 
 
