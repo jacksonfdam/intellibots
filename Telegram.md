@@ -1,4 +1,4 @@
-#Telegram
+# Telegram
 
 ![Telegram](http://www.escolaandroid.com/wp-content/uploads/2015/10/tele1.jpg)
 
@@ -28,6 +28,7 @@ Estas são algumas vantagens do Telegram:
 ![BotList](https://cdn-images-1.medium.com/max/600/1*xrtoeblZ8oLBNkMnluU1dg.png)
 
 ### The Botfather
+
 O Telegram facilita muito a criação de bots para seu sistema. Além de uma documentação muito boa e uma API muito simples de usar, ele possui o BotFather, um bot que ajuda qualquer um a criar seu próprio bot.
 
 Segundo a documentação do Telegram:
@@ -52,5 +53,6 @@ Para saber mais sobre o @BotFather, acesse a documentação do Telegram que fala
 ![BotList](http://www.escolaandroid.com/wp-content/uploads/2015/10/tele21.jpg)
 
 > DICA 1: Proteja esta URL em seu site, crie um diretório ‘secreto’ em seu servidor, com o valor da chave do bot por exemplo: https://intense-island-34719.herokuapp.com/bots/[CHAVE]/index.php
+
 
 > DICA 2: A URL do Webhook tem que ser obrigatoriamente uma url segura (https), seu o seu domínio não possui uma conexão segura configurada, você pode tentar usar a do seu servidor, caso for uma conta compartilhada.
