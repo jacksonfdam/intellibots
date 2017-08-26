@@ -1,8 +1,8 @@
 # ChatBots e Intellibots
 
-<center>![ChatBots e Intellibots](https://cldup.com/4KNATsUz_B.jpg)</center>
+![ChatBots e Intellibots](https://cldup.com/4KNATsUz_B.jpg)
 
-##JACKSON FERREIRA DE ANDRADE MAFRA
+## JACKSON FERREIRA DE ANDRADE MAFRA
 
 Desenvolvedor há 15 anos com background em projetos de e-commerce e real estate, desde 2009 com interesses focados para o desenvolvimento de interfaces móveis e aplicações MEAP.
 
@@ -19,11 +19,11 @@ Me chama lá...
 [@jacksonfdam](http://www.twitter.com/jacksonfdam)
 
 
-##Prefácio
+## Prefácio
 
 O curso de Intellibots e chat bots é 100% prático. Neste guia você encontra as informações básicas sobre as plataformas e fundamentos. Todos os laboratórios serão disponibilizados no github, para download.
 
-##O que é um chatbot?
+## O que é um chatbot?
 
 Por que criar um? O que eles fazem? Qual o contexto que eles existem?
 
@@ -35,9 +35,9 @@ As maiores plataformas de mensagens, como Facebook Messenger e Skype, anunciaram
 
 A ascensão dos chatbots é o resultado direto da mudança de comportamento do usuário no mundo móvel pós-app e do amadurecimento das tecnologias facilitadoras essenciais.
 
-<center>![chatbots](https://cldup.com/vMxrkfpdfs-3000x3000.jpeg)</center>
+![chatbots](https://cldup.com/vMxrkfpdfs-3000x3000.jpeg)
 
-##Bots vs. chatbots
+## Bots vs. chatbots
 
 Mas antes de seguirmos, é importante destacar uma diferença que parece pequena, mas que é crucial para esse assunto: bots e chatbots não são a mesma coisa. A principal diferença entre eles é o formato de funcionamento. 
 
@@ -50,11 +50,12 @@ Já o chatbot parte do pressuposto de que esse robô poderia se passar por um se
 Colocar um bot em um chat definitivamente não faz dele um “chatbot”, ainda que o termo esteja sendo usado para designar scripts automatizados em janelas de chat. No entanto, um fato é que bots nem sempre precisam parecer humanos para serem bons robôs. Às vezes, tudo que a gente precisa é que eles façam o que robôs fazem de melhor: sejam eficientes.
 
 ### Falando com robôs
+
 Todo mundo já deve ter cruzado com um atendimento robótico que deu nos nervos. Vai desde o chat com aquele banco que pede pra você “falar o que está precisando”, mas jamais entende o que você quer dizer, até um certo robô que faz “tec, tec, tec” pra fingir que está buscando seu cadastro através do número do CPF informado (mesmo você sabendo que vai precisar dizer o CPF pra atendente humana depois).
 
 Mas a inclusão dos robôs é crucial para tornar o atendimento em massa mais rápido. Incluir alguma forma de automatização, seja com botões para escolher opções ou através de inteligência artificial, ajuda a fazer uma triagem do atendimento, direcionando os clientes e consumidores para atendimentos mais especializados.
 
-<center>![Poncho](https://cldup.com/IsOzgBwIKX.gif)</center>
+![Poncho](https://cldup.com/IsOzgBwIKX.gif)
 
 Só que falar com máquinas não é uma das nossas coisas favoritas, né? Por isso, quem faz os “roteiros” desses atendimentos têm feito um esforço de transformar a fala do robô de atendimento em algo mais amigável e gentil.
 
@@ -73,7 +74,7 @@ A economia de API amadureceu ao ponto de que muitos serviços úteis podem ser a
 Em suma, chatbots são usados nos ambientes preferidos dos usuários humanos (aplicativos de mensagens), conversam com usuários em linguagem natural, entendem o que os usuários querem, e realizam comandos humanos através de uma grande rede de serviços relacionados.
 
 
-##Plataformas de bot
+## Plataformas de bot
 
 Agora, vamos dar uma olhada em algumas plataformas de mensagem nas quais você pode construir bots.
 
@@ -114,7 +115,7 @@ Para uma aprendizagem eficaz, proponho uma abordagem de “framework open source
 Você pode baixar e aprender sobre meu próprio framework leve, tanto em Java quanto em PHP, no GitHub.
 
 
-##NLP (Neuro Linguistic Programming) 
+## NLP (Natural Language Processing) 
 
     Ou Processamento de Linguagem Natural
 
@@ -258,14 +259,14 @@ Como um BOT é baseado em serviços REST, tenha em mente que todas as mensagens 
 
 <center>![Bot Connector Messages](https://cldup.com/x-ihAcXuLo-3000x3000.png)</center>
 
-##API.AI
+## API.AI
 
 O Api.ai é um plataforma que vai facilitar muito a criação de um Bot que pode responder de maneira fácil perguntas de texto e áudio.  
 
 O Api.ai é uma plataforma muito bacana aonde você pode configurar rapidamente um Bot que consegue responder frases pré programadas (e até frases similares), ele permite também que você chame um Webhook quando determinada frase for recebida.
 
 
-##Wit.ai
+## Wit.ai
 
 A construção de um chatbot passa basicamente por dois grandes desafios: processamento de linguagem natural (***Natural language processing (NLP)***) e entendimento de linguagem natural (***Natural language understanding (NLU)***).
 
@@ -280,7 +281,7 @@ O Wit.ai oferece uma API que pega um texto ou entrada de voz e retorna intents e
 
 Dependendo das intents e entities que você obtém como entrada do usuário, sua aplicação pode tomar ações ou até mesmo fazer novas perguntas ao usuário.
 
-##Telegram
+## Telegram
 
 O Telegram, para quem ainda não conhece, é um aplicativo de mensagens baseado em nuvem. O fato de ele ser baseado em nuvem permite que o usuário acesse suas mensagens em qualquer dispositivo. 
 
@@ -290,7 +291,7 @@ Com a API do Telegram é possível criar clientes para ler e enviar mensagens, o
 
 No site Telegram Bot Store ([https://storebot.me/](https://storebot.me/)) é possível encontrar uma série de bots das mais variadas funções. 
  
-##Slack
+## Slack
 
 É uma ferramenta simples, que faz basicamente chat com diversos canais, mas que está ajudando muito na nossa comunicação. O Slack permite integração com diversos tipos de ferramentas, como o Visual Studio Team Services, Github, entre outros. E é totalmente gratuito, desde que você não se preocupe com permissões de usuários, histórico eterno de mensagens, ou não queira integrar com mais do que 10 aplicações. É suficiente para a maioria das empresas.
 
@@ -298,7 +299,7 @@ O Slack já vem com um chat bot chamado Slackbot. O Slackbot é capaz de fazer c
 
 O Slackbot é um chat bot simples. Há chat bots mais poderosos. 
 
-###Por que criar um bot pro slack?
+### Por que criar um bot pro slack?
 
 Já vimos que bots são assistentes programáveis. Isso quer dizer que você pode criar um bot para te ajudar a resolver problemas que você encontre. Não sabe se sua agenda está livre? Seu time é distribuído através do mundo e você não lembra o fuso-horário? Sempre esquece aquele link que você só precisa usar uma vez por semana? Checar se o seu site está offline pra todo mundo ou se só para você?
 
@@ -306,7 +307,7 @@ Todas essas situações podem ser resolvidas por alguém que esteja disponível 
 
 É aí que nosso bot entra! Ele não dorme, não come, não precisa de intervalos e está sempre disponível para lhe dar as informações que ele souber!
 
-##Hubot
+#### Hubot
 
 O Hubot é feito pelo Github, e possui uma API de integração. Ele é escrito em CoffeeScript, roda sobre NodeJS, e é software livre. Ele se integra, através do que chama adaptadores ([https://hubot.github.com/docs/adapters/](https://hubot.github.com/docs/adapters/)), com diversos tipos de aplicações de chat, como o Slack, mas também outros, como o HipChat, o Campfire e até o Skype.
 
@@ -314,7 +315,7 @@ O Hubot, sozinho, não faz nada. É através da sua API de integração que cons
 
 No github ([https://github.com/github/hubot-scripts/tree/master/src/scripts](https://github.com/github/hubot-scripts/tree/master/src/scripts)) você pode ver os 461 scripts que já vêm com ele. De um tempo pra cá, esse repositório/pacote npm não recebe mais scripts novos, e todo novo script tem ido para a organização do github “hubot-scripts”, e cada script é um pacote npm independente.
 
-##Referências:
+## Referências:
 
 RUSSELL, Stuart J.; NORVIG, Peter. Inteligência Artificial. Editora Campus, Rio de Janeiro, 2004.
 
