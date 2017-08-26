@@ -1,4 +1,4 @@
-#Api.ai
+# Api.ai
 
 ## Crie uma conta no Api.ai
 O Api.ai é um plataforma que vai facilitar muito a criação de um Bot que pode responder de maneira fácil perguntas de texto e áudio.  Acesse o Link e crie sua conta: [Criar Conta](https://console.api.ai/api-client/#/signup)
@@ -9,7 +9,6 @@ O Api.ai é uma plataforma muito bacana aonde você pode configurar rapidamente 
 
 Além de ser uma ferramenta possui uma das melhores interfaces para construção de aplicações com NLU, em setembro de 2016, ela foi adquirida pelo Google, o que evidencia o poder da plataforma e o tanto que ela ainda vai evoluir.
 
-O Api.ai é gratuito até 6000 chamadas mensais, claro que isso é pouco para uma aplicação profissional, porém para nossos propósitos é suficiente.
 
 No Google I/O deste ano (2017), foi anunciado que os desenvolvedores poderão alcançar usuários do Google Assistant utilizando Actions no api.ai 😮
 
@@ -25,7 +24,7 @@ A parte verde é a parte fornecida pela plataforma. Ela está localizada entre s
 Uma opção que pode ser bastante explorada é a implementação de webhook , onde o api.ai permite que sistemas externos recebam notificações de eventos que ocorrem na intenção do usuário, possibilitando que seu serviço execute suas lógicas de negócios ou acesse dados de armazenamento.
 
 
-###AGORA VAMOS CONECTAR O API.AI AO NOSSO APP DO FACEBOOK
+### AGORA VAMOS CONECTAR O API.AI AO NOSSO APP DO FACEBOOK
 
  - Acesse sua conta do Api.ai: Acessar 
 
@@ -106,7 +105,7 @@ Primeiro você diz “Olá”, depois quando o bot perguntar se você está bem,
 
 Pronto o Bot já sabe um cumprimento. 
 
-###PROGRAMANDO O BOT PARA DIZER QUAIS SÃO SUAS HABILIDADES ATUAIS
+### PROGRAMANDO O BOT PARA DIZER QUAIS SÃO SUAS HABILIDADES ATUAIS
 
 Para fazer isso basta você criar um “Intent” que responde qual a habilidade atual do seu “Bot”. Algo como: “Quais são suas habilidades Bot?”, “Quais habilidades você tem?” ou até mesmo “O que você sabe fazer?” e o Bot pode responder algo como “Eu sei somar dois números”.
 
@@ -124,7 +123,7 @@ Um campo deve aparecer para você colocar o link do seu aplicativo.
 
 Pronto agora é só clicar em “Salvar”
 
-###ÚLTIMO PASSO!  FAZER O API.AI CHAMAR NOSSA API
+### ÚLTIMO PASSO!  FAZER O API.AI CHAMAR NOSSA API
 
 Agora é aonde a mágica finalmente acontece, vamos fazer o Api.ai chamar nossa Api para responder a uma pergunta do usuário.
 

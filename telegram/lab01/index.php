@@ -114,7 +114,6 @@ function apiRequestJson($method, $parameters) {
 }
 
 function processMessage($message) {
-<<<<<<< HEAD
 	/* process incoming message */
 	$message_id = $message['message_id'];
 	$chat_id = $message['chat']['id'];
@@ -137,38 +136,10 @@ function processMessage($message) {
 	} else {
 		apiRequest("sendMessage", array('chat_id' => $chat_id, "text" => 'I understand only text messages'));
 	}
-=======
-  // processa a mensagem recebida
-  $message_id = $message['message_id'];
-  $chat_id = $message['chat']['id'];
-  if (isset($message['text'])) {
-    
-    $text = $message['text'];//texto recebido na mensagem
-    if (strpos($text, "/start") === 0) {
-		//envia a mensagem ao usuário
-      sendMessage("sendMessage", array('chat_id' => $chat_id, "text" => 'Olá, '. $message['from']['first_name'].
-		'! Eu sou um bot que informa a previsao do tempo na sua cidade?', 'reply_markup' => array(
-        'keyboard' => array(array('São Paulo', 'Porto Alegre'),array('Curitiba','Florianópolis')),
-        'one_time_keyboard' => true)));
-    } else if ($text === "São Paulo") {
-      sendMessage("sendMessage", array('chat_id' => $chat_id, "text" => getWeather($text)));
-    } else if ($text === "Porto Alegre") {
-      sendMessage("sendMessage", array('chat_id' => $chat_id, "text" => getWeather($text)));
-    } else if ($text === "Florianópolis") {
-      sendMessage("sendMessage", array('chat_id' => $chat_id, "text" => getWeather($text)));
-    } else if ($text === "Curitiba") {
-      sendMessage("sendMessage", array('chat_id' => $chat_id, "text" => getWeather( $text)));
-    } else {
-      sendMessage("sendMessage", array('chat_id' => $chat_id, "text" => 'Desculpe, mas não entendi essa mensagem. :('));
-    }
-  } else {
-    sendMessage("sendMessage", array('chat_id' => $chat_id, "text" => 'Desculpe, mas só compreendo mensagens em texto'));
-  }
->>>>>>> 17105c74401bfc4d4b2b840d4340c087aec76c47
 }
 
 
-define('WEBHOOK_URL', 'https://my-site.example.com/secret-path-for-webhooks/');
+define('WEBHOOK_URL', 'https://gentle-beyond-36235.herokuapp.com/');
 
 if (php_sapi_name() == 'cli') {
 	/* if run from console, set or delete webhook */
@@ -184,10 +155,6 @@ if (!$update) {
 	/* receive wrong update, must not happen */
 	exit;
 }
-<<<<<<< HEAD
-
 if (isset($update["message"])) {
 	processMessage($update["message"]);
 }
-=======
->>>>>>> 17105c74401bfc4d4b2b840d4340c087aec76c47

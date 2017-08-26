@@ -1,9 +1,8 @@
-#Facebook
+# Facebook
 
 [Bots for Messenger Platform](https://developers.facebook.com/docs/messenger-platform/product-overview) é fácil o suficiente para criar que os engenheiros do Facebook foram capazes de dar um exemplo de trabalho de bots simples em cerca de 10 minutos durante a conferência de desenvolvedores F8 em abril deste ano.
 
 As etapas gerais que um desenvolvedor precisa seguir para começar a criar um bot incluem:
-
 
  - Criar um aplicativo do Facebook e uma página do Facebook
  - Configurar os [webhooks](https://developers.facebook.com/docs/messenger-platform/implementation#setup_webhook)
@@ -42,7 +41,7 @@ Feito isso, será exibida uma página com os detalhes do app recém-criado.
 
 ![FacebookApp](https://cldup.com/-JiCE_rI2Z.thumb.jpg)
 
-##Obter Access Token e Definir Webhook
+## Obter Access Token e Definir Webhook
 
 Com o app criado, o próximo passo é obter o Access Token e definir o link do Webhook. Para isso, no menu no lado esquerdo da tela do app, clique em “Adicionar Produto”. Quando isso for feito, uma tela semelhante a da imagem abaixo será aberta. 
 
@@ -58,9 +57,21 @@ Após gerar o token, na seção Webhooks, clique em “Setup Webhooks”.
 
 ![FacebookApp](https://cldup.com/x8FS8Xgs4v.thumb.jpg)
 
-Ao abrir a janela, digite a URL que será usada como Webhook. É importante ressaltar que essa URL deve suportar HTTPS. Digite também um token para identificar o app e escolha as funcionalidades que você deseja integrar ao seu bot. Não clique em “Verificar e Salvar” ainda!
+Ao abrir a janela, digite a URL que será usada como Webhook. É importante ressaltar que essa URL deve suportar HTTPS. Digite também um token para identificar o app e escolha as funcionalidades que você deseja integrar ao seu bot. 
+
+Na parte de Subscription Fields você deve selecionar: *messages*, *message_deliveries*, *messaging_options* e *messaging_postbacks*.
+
+Não clique em “Verificar e Salvar” ainda!
 
 ![FacebookApp](https://cldup.com/x8FS8Xgs4v.thumb.jpg)
+
+### Enviando e Recebendo Mensagens
+Para entendermos melhor cada uma dessas opções, descrevo abaixo cada uma delas:
+- **[messages](https://developers.facebook.com/docs/messenger-platform/webhook-reference/message)**  —  Este é o principal tipo de evento em que estaremos interessados. Este evento é acionado toda vez que alguém envia uma mensagem para sua página.
+- **[messages_deliveries ](https://developers.facebook.com/docs/messenger-platform/webhook-reference/message-delivered)**— São os relatórios de entrega das mensagens enviadas.
+- **[messaging_postbacks](https://developers.facebook.com/docs/messenger-platform/webhook-reference/postback)**  —  O facebook permite enviar mais que texto, ele disponibiliza modelos com botões que após serem clicados podem enviar uma carga útil especificada para o seu webhook. Um exemplo simples é um modelo com 2 botões para se inscrever ou cancelar a inscrição. Quando o usuário toca qualquer um deles, o evento de postback é acionado e o facebook envia a carga que você definiu para o botão, de volta para você.
+- **[messaging_opt-ins](https://developers.facebook.com/docs/messenger-platform/webhook-reference/optins)**— Isso é usado para autenticação e é disparado quando alguém usa o Plugin Enviar para Messenger do Facebook que pode residir em seu site como um ponto de entrada.
+
 
 > 
 O que isso significa? O Webhook quando acessar a URL, ele primeiro vai fazer uma verificação de token antes de fazer qualquer coisa, se não estiver presente ou incorreto, ele dá o erro.
