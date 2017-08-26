@@ -7,7 +7,23 @@ O Api.ai é um plataforma que vai facilitar muito a criação de um Bot que pode
 
 O Api.ai é uma plataforma muito bacana aonde você pode configurar rapidamente um Bot que consegue responder frases pré programadas (e até frases similares), ele permite também que você chame um Webhook quando determinada frase for recebida.
 
+Além de ser uma ferramenta possui uma das melhores interfaces para construção de aplicações com NLU, em setembro de 2016, ela foi adquirida pelo Google, o que evidencia o poder da plataforma e o tanto que ela ainda vai evoluir.
+
 O Api.ai é gratuito até 6000 chamadas mensais, claro que isso é pouco para uma aplicação profissional, porém para nossos propósitos é suficiente.
+
+No Google I/O deste ano (2017), foi anunciado que os desenvolvedores poderão alcançar usuários do Google Assistant utilizando Actions no api.ai 😮
+
+Uma outra feature anunciada no dia do evento, foi o Analytics da plataforma. A página de análise fornece informações sobre o desempenho do seu agente para que você possa trabalhar em melhorias e focar ainda mais na experiência do usuário
+
+### Introdução
+O diagrama abaixo mostra como o api.ai está relacionado a outros componentes e a forma como ele processa os dados:
+
+![enter image description here](https://cdn-images-1.medium.com/max/800/1*GJkOnch_ldkVAAUFPXZnFA.png)
+
+A parte verde é a parte fornecida pela plataforma. Ela está localizada entre sua aplicação que deve fornecer os métodos de entrada e saída, respondendo assim aos dados acionáveis.
+
+Uma opção que pode ser bastante explorada é a implementação de webhook , onde o api.ai permite que sistemas externos recebam notificações de eventos que ocorrem na intenção do usuário, possibilitando que seu serviço execute suas lógicas de negócios ou acesse dados de armazenamento.
+
 
 ###AGORA VAMOS CONECTAR O API.AI AO NOSSO APP DO FACEBOOK
 
