@@ -1,12 +1,20 @@
 	<?php
+
+	setlocale(LC_TIME, "pt_BR");
+	date_default_timezone_set('America/Sao_Paulo');
+
+	$meses = array (1 => "Janeiro", 2 => "Fevereiro", 3 => "Março", 4 => "Abril", 5 => "Maio", 6 => "Junho", 7 => "Julho", 8 => "Agosto", 9 => "Setembro", 10 => "Outubro", 11 => "Novembro", 12 => "Dezembro");
+	$diasdasemana = array (1 => "Segunda-Feira",2 => "Terça-Feira",3 => "Quarta-Feira",4 => "Quinta-Feira",5 => "Sexta-Feira",6 => "Sábado",0 => "Domingo");
+
 	/* 
 	https://developers.facebook.com/docs/messenger-platform/webhook-reference/message-received 
 
 	*/
 
-	define('BOT_TOKEN', "EAAaki53jQwMBAGgy1sDUkjR0tQOyDFcVbKk1vavact1wiQ1dszOrAPiUuZCzdOL8bZCoVDdO9KpgqRyfVXSUEySUYwBgG6pijLRg0UC5AFG3MIxUMOAJarKPfvbBq58uIWXwdRZAxQeCACfhCCYbKQ2ccAvIPGVZAZAIXlcFJDAZDZD");
+	define('BOT_TOKEN', "EAARnxkZCzY10BAAmBwMZC22ADQbgPzxU2berWP4iHF202KrSkbCf05bh4zr9TgAzufCly7arjHiAqmyfZBHnZBvsEvfYs5J2TElDoZB8Ir4NHoVebZC9pDFqGZB14rY1z4HYtL3BhzfXhSUbjJO6WCY8VHWXQrvJx8vq1wSpU2WEAZDZD");
 	define('VERIFY_TOKEN', "curso_intellibots");
 	define('API_URL', 'https://graph.facebook.com/v2.6/me/messages?access_token='.BOT_TOKEN);
+	define('WEATHER_API_URL', 'http://api.openweathermap.org/data/2.5/weather?appid=e036195e96fe8ea62f54d5170035147b&q=');
 
 	/*
 	Teste Tambem:
@@ -27,6 +35,14 @@
 
 	$hub_verify_token = null;
 
+	function getWeather($city){
+		$url = WEATHER_API_URL."$city,BR&lang=pt&units=metric";
+		$cURL = curl_init($url);
+		curl_setopt($cURL, CURLOPT_RETURNTRANSFER, true); 
+		$resultado = curl_exec($cURL);              
+		return json_decode($resultado, true);
+	}
+
 	function processMessage($message) {
 
 		$sender = $message['sender']['id'];
@@ -36,10 +52,35 @@
 
 			if(preg_match('[data|hora|agora]', strtolower($text))) {
 				ini_set('user_agent','Mozilla/4.0 (compatible; MSIE 6.0)');
-				$result = file_get_contents("http://www.timeapi.org/utc/now?format=%25a%20%25b%20%25d%20%25I:%25M:%25S%20%25Y");
+				$hoje = getdate();
+				$dia = $hoje["mday"];
+				$mes = $hoje["mon"];
+				$nomemes = $meses[$mes];
+				$ano = $hoje["year"];
+				$diadasemana = $hoje["wday"];
+				$nomediadasemana = $diasdasemana[$diadasemana];
+				$result = "São ". date("H:i") . " de $nomediadasemana, $dia de $nomemes de $ano";
 				if($result != '') {
 					sendMessage(array('recipient' => array('id' => $sender), 'message' => array('text' => $result)));
 				}
+			} else if(preg_match('[tempo]', strtolower($text))) {
+				/* echo "O usuário buscou por '$text'"; */
+				$dados = explode(" em ",$text);
+				/* 
+				$dados[0]  -> Contem a Intenção do Usuário
+				$dados[1]  -> Contem a Entidade
+				*/
+				if(isset($dados[1]) && !empty($dados[1])){
+					$cidade = getWeather($dados[1]);
+					$result = "Hoje a condição em ".$cidade['name']." é de ".$cidade ['weather'][0]['description'].", com temperatura de " . $cidade ['main']['temp']." com miníma de ".$cidade ['main']['temp_min']." e máxima de ".$cidade ['main']['temp_max']."";
+
+					if($result != '') {
+						sendMessage(array('recipient' => array('id' => $sender), 'message' => array('text' => $result)));
+					}
+				}else{
+					sendMessage(array('recipient' => array('id' => $sender), 'message' => array('text' => 'Desculpe não compreendi a cidade.')));
+				}
+
 			} else {
 				sendMessage(array('recipient' => array('id' => $sender), 'message' => array('text' => 'Olá! Eu sou um bot do curso de Intellibots')));
 			}

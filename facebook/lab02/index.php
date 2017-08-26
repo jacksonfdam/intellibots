@@ -1,186 +1,172 @@
 <?php
-$verify_token = ""; // Verify token
-$token = ""; // Page token
+setlocale(LC_TIME, "pt_BR");
+date_default_timezone_set('America/Sao_Paulo');
 
-if (file_exists(__DIR__.'/config.php')) {
-    $config = include __DIR__.'/config.php';
-    $verify_token = $config['verify_token'];
-    $token = $config['token'];
+/*
+
+https://developers.facebook.com/docs/messenger-platform/send-api-reference/templates
+
+*/
+define('BOT_TOKEN', "EAARnxkZCzY10BAAmBwMZC22ADQbgPzxU2berWP4iHF202KrSkbCf05bh4zr9TgAzufCly7arjHiAqmyfZBHnZBvsEvfYs5J2TElDoZB8Ir4NHoVebZC9pDFqGZB14rY1z4HYtL3BhzfXhSUbjJO6WCY8VHWXQrvJx8vq1wSpU2WEAZDZD");
+define('VERIFY_TOKEN', "curso_intellibots");
+define('API_URL', 'https://graph.facebook.com/v2.6/me/messages?access_token='.BOT_TOKEN);
+
+
+if ($_REQUEST['hub_verify_token'] === VERIFY_TOKEN) {
+	echo $_REQUEST['hub_challenge'];
+	exit;
 }
 
-require_once(dirname(__FILE__) . '/vendor/autoload.php');
 
-
-use intellibots\FbBotApp;
-use intellibots\Messages\Message;
-use intellibots\Messages\ImageMessage;
-use intellibots\UserProfile;
-use intellibots\Messages\MessageButton;
-use intellibots\Messages\StructuredMessage;
-use intellibots\Messages\MessageElement;
-use intellibots\Messages\MessageReceiptElement;
-use intellibots\Messages\Address;
-use intellibots\Messages\Summary;
-use intellibots\Messages\Adjustment;
-
-// Make Bot Instance
-$bot = new FbBotApp($token);
-if (!empty($_REQUEST['local'])) {
-    $message = new ImageMessage(1585388421775947, dirname(__FILE__).'/Messages-256.png');
-    $message_data = $message->getData();
-    $message_data['message']['attachment']['payload']['url'] = 'Messages-256.png';
-        echo '<pre>', print_r($message->getData()), '</pre>';
-    $res = $bot->send($message);
-    echo '<pre>', print_r($res), '</pre>';
+function getUsuario($USER_ID){
+	$ch = curl_init();
+	curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+	curl_setopt($ch, CURLOPT_URL, 'https://graph.facebook.com/v2.6/'.$USER_ID.'?fields=first_name,last_name&access_token='.BOT_TOKEN);
+	$result = curl_exec($ch);
+	curl_close($ch);
+	return json_decode($result);
 }
-// Receive something
-if (!empty($_REQUEST['hub_mode']) && $_REQUEST['hub_mode'] == 'subscribe' && $_REQUEST['hub_verify_token'] == $verify_token) {
-    // Webhook setup request
-    echo $_REQUEST['hub_challenge'];
-} else {
-    // Other event
-    $data = json_decode(file_get_contents("php://input"), true, 512, JSON_BIGINT_AS_STRING);
-    if (!empty($data['entry'][0]['messaging'])) {
-        foreach ($data['entry'][0]['messaging'] as $message) {
-            // Skipping delivery messages
-            if (!empty($message['delivery'])) {
-                continue;
-            }
-            
-            
-            // skip the echo of my own messages
-            if (($message['message']['is_echo'] == "true")) {
-                continue;
-            }
-            
-            $command = "";
-            // When bot receive message from user
-            if (!empty($message['message'])) {
-                $command = $message['message']['text'];
-            // When bot receive button click from user
-            } else if (!empty($message['postback'])) {
-                $command = $message['postback']['payload'];
-            }
-            // Handle command
-            switch ($command) {
-                // When bot receive "text"
-                case 'text':
-                    $bot->send(new Message($message['sender']['id'], 'This is a simple text message.'));
-                    break;
-                // When bot receive "image"
-                case 'image':
-                    $bot->send(new ImageMessage($message['sender']['id'], 'https://developers.facebook.com/images/devsite/fb4d_logo-2x.png'));
-                    break;
-                // When bot receive "image"
-                case 'local image':
-                    $bot->send(new ImageMessage($message['sender']['id'], dirname(__FILE__).'/Messages-256.png'));
-                    break;
-                // When bot receive "profile"
-                case 'profile':
-                    $user = $bot->userProfile($message['sender']['id']);
-                    $bot->send(new StructuredMessage($message['sender']['id'],
-                        StructuredMessage::TYPE_GENERIC,
-                        [
-                            'elements' => [
-                                new MessageElement($user->getFirstName()." ".$user->getLastName(), " ", $user->getPicture())
-                            ]
-                        ]
-                    ));
-                    break;
-                // When bot receive "button"
-                case 'button':
-                  $bot->send(new StructuredMessage($message['sender']['id'],
-                      StructuredMessage::TYPE_BUTTON,
-                      [
-                          'text' => 'Choose category',
-                          'buttons' => [
-                              new MessageButton(MessageButton::TYPE_POSTBACK, 'First button'),
-                              new MessageButton(MessageButton::TYPE_POSTBACK, 'Second button'),
-                              new MessageButton(MessageButton::TYPE_POSTBACK, 'Third button')
-                          ]
-                      ]
-                  ));
-                break;
-                // When bot receive "generic"
-                case 'generic':
-                    $bot->send(new StructuredMessage($message['sender']['id'],
-                        StructuredMessage::TYPE_GENERIC,
-                        [
-                            'elements' => [
-                                new MessageElement("First item", "Item description", "", [
-                                    new MessageButton(MessageButton::TYPE_POSTBACK, 'First button'),
-                                    new MessageButton(MessageButton::TYPE_WEB, 'Web link', 'http://facebook.com')
-                                ]),
-                                new MessageElement("Second item", "Item description", "", [
-                                    new MessageButton(MessageButton::TYPE_POSTBACK, 'First button'),
-                                    new MessageButton(MessageButton::TYPE_POSTBACK, 'Second button')
-                                ]),
-                                new MessageElement("Third item", "Item description", "", [
-                                    new MessageButton(MessageButton::TYPE_POSTBACK, 'First button'),
-                                    new MessageButton(MessageButton::TYPE_POSTBACK, 'Second button')
-                                ])
-                            ]
-                        ]
-                    ));
-                    
-                break;
-                // When bot receive "receipt"
-                case 'receipt':
-                    $bot->send(new StructuredMessage($message['sender']['id'],
-                        StructuredMessage::TYPE_RECEIPT,
-                        [
-                            'recipient_name' => 'Fox Brown',
-                            'order_number' => rand(10000, 99999),
-                            'currency' => 'USD',
-                            'payment_method' => 'VISA',
-                            'order_url' => 'http://facebook.com',
-                            'timestamp' => time(),
-                            'elements' => [
-                                new MessageReceiptElement("First item", "Item description", "", 1, 300, "USD"),
-                                new MessageReceiptElement("Second item", "Item description", "", 2, 200, "USD"),
-                                new MessageReceiptElement("Third item", "Item description", "", 3, 1800, "USD"),
-                            ],
-                            'address' => new Address([
-                                'country' => 'US',
-                                'state' => 'CA',
-                                'postal_code' => 94025,
-                                'city' => 'Menlo Park',
-                                'street_1' => '1 Hacker Way',
-                                'street_2' => ''
-                            ]),
-                            'summary' => new Summary([
-                                'subtotal' => 2300,
-                                'shipping_cost' => 150,
-                                'total_tax' => 50,
-                                'total_cost' => 2500,
-                            ]),
-                            'adjustments' => [
-                                new Adjustment([
-                                    'name' => 'New Customer Discount',
-                                    'amount' => 20
-                                ]),
-                                new Adjustment([
-                                    'name' => '$10 Off Coupon',
-                                    'amount' => 10
-                                ])
-                            ]
-                        ]
-                    ));
-                break;
-                case 'set menu':
-                    $bot->setPersistentMenu([
-                        new MessageButton(MessageButton::TYPE_WEB, "First link", "http://yandex.ru"),
-                        new MessageButton(MessageButton::TYPE_WEB, "Second link", "http://google.ru")
-                    ]);
-                break;
-                case 'delete menu':
-                    $bot->deletePersistentMenu();
-                break;
-                // Other message received
-                default:
-                    if (!empty($command)) 
-                    $bot->send(new Message($message['sender']['id'], 'Sorry. I don’t understand you.'));
-            }
-        }
-    }
+$input = json_decode(file_get_contents('php://input'), true);
+$senderId = $input['entry'][0]['messaging'][0]['sender']['id'];
+$messageText = $input['entry'][0]['messaging'][0]['message']['text'];
+$messageType = isset($input['entry'][0]['messaging'][0]['message']['attachments'][0]['type']) ? $input['entry'][0]['messaging'][0]['message']['attachments'][0]['type'] : '';
+$response = null;
+
+if($messageType=='location'){
+	$attachment = $input['entry'][0]['messaging'][0]['message']['attachments'][0];
+	$answer = "Olá ".getUsuario($senderId)->first_name ." você está na ".$attachment['title']." ?";
+	$response = [
+		'recipient' => [ 'id' => $senderId ],
+		'message' => [ 'text' => $answer ]
+	];
 }
+
+if($messageText == "hi") {
+	$answer = "Hello ".getUsuario($senderId)->first_name;
+	$response = [
+		'recipient' => [ 'id' => $senderId ],
+		'message' => [ 'text' => $answer ]
+	];
+}
+
+if($messageText == "phpconference"){
+     $answer = ["attachment"=>[
+      "type"=>"template",
+      "payload"=>[
+        "template_type"=>"generic",
+        "elements"=>[
+          [
+            "title"=>"PHP Conference Brasil 2017",
+            "item_url"=>"http://phpconference.com.br/",
+            "image_url"=>"http://phpconference.com.br/media/images/noticia/med/3040c720eec335dd86a754f43bb20a20.png",
+            "subtitle"=>"O principal evento de php da américa latina",
+            "buttons"=>[
+              [
+                "type"=>"web_url",
+                "url"=>"http://phpconference.com.br/",
+                "title"=>"Visitar"
+              ],
+              [
+                "type"=>"postback",
+                "title"=>"Tirar Dúvidas",
+                "payload"=>"tenho_duvidas"
+              ]              
+            ]
+          ]
+        ]
+      ]
+    ]];
+     $response = [
+    'recipient' => [ 'id' => $senderId ],
+    'message' => $answer 
+];
+}
+
+if($messageText == "Tirar Dúvidas") {
+	$answer = "Olá, ".getUsuario($senderId)->first_name.", que dúvidas você tem?";
+	$response = [
+		'recipient' => [ 'id' => $senderId ],
+		'message' => [ 'text' => $answer ]
+	];
+}
+
+if($messageText == "cursos"){
+ $answer = ["attachment"=>[
+      "type"=>"template",
+      "payload"=>[
+        "template_type"=>"list",
+        "elements"=>[
+          [
+             "title"=> "ChatBots: Intelligent Bots - Aprenda a Desenvolver ChatBots ",
+                    "image_url"=> "https://static.wixstatic.com/media/faf3fd_0b274f61f1eb4c12a54920baf56bbe7e~mv2.jpg/v1/fill/w_243,h_132,al_c,q_80,usm_0.66_1.00_0.01/faf3fd_0b274f61f1eb4c12a54920baf56bbe7e~mv2.webp",
+                    "subtitle"=> "Presencial São Paulo  |   EAD ao vivo",
+                    "default_action"=> [
+                        "type"=> "web_url",
+                        "url"=> "https://www.temporealeventos.com.br/intelligent-bots-presencial",                       
+                        "webview_height_ratio"=> "tall"
+                    ],
+            "buttons"=>[
+              [
+                "type"=>"web_url",
+                "url"=>"https://www.temporealeventos.com.br/intelligent-bots-presencial",
+                "title"=>"Conferir"
+              ],
+            ]
+          ],
+            [
+            "title"=>"Amazon AWS  | Virtualização vs Cloud Computing",
+            "item_url"=>"https://www.temporealeventos.com.br/amazon-aws-treinamento-presencial",
+            "image_url"=>"https://static.wixstatic.com/media/faf3fd_0b274f61f1eb4c12a54920baf56bbe7e~mv2.jpg/v1/fill/w_243,h_132,al_c,q_80,usm_0.66_1.00_0.01/faf3fd_0b274f61f1eb4c12a54920baf56bbe7e~mv2.webp",
+            "subtitle"=>"Presencial São Paulo ",
+            "buttons"=>[
+              [
+                "type"=>"web_url",
+                "url"=>"https://www.temporealeventos.com.br/amazon-aws-treinamento-presencial",
+                "title"=>"Conferir"
+              ],
+            ]
+          ]
+        ]
+      ]
+    ]];
+  $response = [
+    'recipient' => [ 'id' => $senderId ],
+    'message' => $answer
+];}
+
+if($messageText == "sobre") {  
+  $answer = ["attachment"=>[
+      "type"=>"template",
+      "payload"=>[
+        "template_type"=>"button",
+        "text"=>"Quer conhecer melhor a Tempo Real Eventos?",
+        "buttons"=>[
+          [
+            "type"=>"web_url",
+            "url"=>"https://www.temporealeventos.com.br/sobre-a-tempo-real-eventos",
+            "title"=>"Conhecer"
+          ],
+          [
+            "type"=>"postback",
+            "title"=>"Comprar Curso",
+            "payload"=>"comprar_curso"
+          ]
+        ]
+      ]
+      ]];
+      $response = [
+    'recipient' => [ 'id' => $senderId ],
+    'message' => $answer
+];
+}
+
+
+$ch = curl_init(API_URL);
+curl_setopt($ch, CURLOPT_POST, 1);
+curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($response));
+curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/json']);
+if(!empty($input)){
+	$result = curl_exec($ch);
+}
+curl_close($ch);
