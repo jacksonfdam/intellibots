@@ -1,0 +1,16 @@
+{
+    "name": "jacksonfdam/lab04",
+    "description": "Lab 04 - Facebook - Curso Bots",
+    "type": "project",
+    "require": {
+        "botman/botman": "^2.3",
+        "botman/driver-web": "^1.5",
+        "botman/driver-facebook": "^1.7"
+    },
+    "authors": [
+        {
+            "name": "Jackson F. de A. Mafra",
+            "email": "jacksonfdam@gmail.com"
+        }
+    ]
+}

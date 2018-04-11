@@ -1,0 +1,17 @@
+{
+  "name": "intellibots/lab02",
+  "description": " Laboratório com a Slack Bot PHP API",
+  "homepage": "https://github.com/jacksonfdam/intellibots",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Jackson Mafra",
+      "email": "jacksonfdam@gmail.com",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": ">=5.6.0",
+   	"jclg/php-slack-bot": "^0.0.6"
+  }
+}

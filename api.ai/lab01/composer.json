@@ -1,0 +1,12 @@
+{
+    "name": "jacksonfdam/lab01",
+    "authors": [
+        {
+            "name": "Jackson F. de A. Mafra",
+            "email": "jacksonfdam@gmail.com"
+        }
+    ],
+    "require": {
+        "iboldurev/api-ai-php": "^0.2.5"
+    }
+}
