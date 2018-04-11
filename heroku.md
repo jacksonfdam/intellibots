@@ -44,7 +44,7 @@ GIT
 	C:\Users\jackson>git --version
 	git version 2.2.1
 
-###Preparar a aplicação
+### Preparar a aplicação
 
 Nesta etapa, você preparará um aplicativo simples que pode ser implantado.
 Para clonar o aplicativo de exemplo para que você tenha uma versão local do código que você pode então implantar no Heroku, execute os seguintes comandos em seu shell de comando local ou no terminal:
@@ -52,7 +52,7 @@ Para clonar o aplicativo de exemplo para que você tenha uma versão local do c�
 	C:\xampp\htdocs>git clone https://github.com/heroku/php-getting-started.git LucidaBot
 	C:\xampp\htdocs>cd LucidaBot
 
-###Implantar o aplicativo
+### Implantar o aplicativo
 
 Nesta etapa, você implantará o aplicativo no Heroku.
 
