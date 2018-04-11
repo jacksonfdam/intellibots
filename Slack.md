@@ -13,10 +13,19 @@ Ele não dorme, não come, não precisa de intervalos e está sempre disponível
 Vamos aprender como fazer esse assistente mágico!
 
 
-https://github.com/lygav/php-slackbot
+#### Criando o bot no Slack
 
-https://blog.lambda3.com.br/2015/12/criando-um-chat-bot-com-hubot-slack-docker-e-azure/
-http://blog.verticecomputacao.com.br/criando-um-bot-para-slack-usando-hubot-coffeescript-e-heroku/
-https://github.com/lygav/php-slackbot
-https://github.com/mpociot/botman
+Para poder criar um bot, precisamos de mais um passo: avisar ao Slack que estamos criando um! Para que o bot seja capaz de “ler” mensagens e responder, ele precisa de um  _token_, que é uma permissão que o Slack concede para que você crie seu próprio bot.
+Esse token fica associado com a sua conta, então é necessário ter muito cuidado para não compartilhar esse token com ninguém.
+
+### Criando nosso bot
+Antes de escrevermos qualquer código, precisamos configurar o nosso bot do Slack dentro da nossa equipe do Slack. Vá até *https://[yourslackteam].slack.com/apps/build/custom-integration* integração personalizada e clique em “Bots”.
+  
+![](https://www.twilio.com/blog/wp-content/uploads/2017/02/SuUYUoDfy60pGc5bE-C6WPS5A6ob-lpDhSTTnTc4ngp-fmMMZ9ezBErw88iM8En466SVled_DYd-ixzlWGr7U1m0kGH3-dEm1u-5t8h6NK0HRQywVtlBSvuxLrSfCuulx7Q8_wYh.png)
+
+Dê ao seu bot um nome inteligente. Ou, se você não tiver inspiração, sinta-se à vontade para usar algo simples como "php_bot" e clique em "Adicionar integração".
+
+![](https://www.twilio.com/blog/wp-content/uploads/2017/02/pq1aXzKShVuuaTlxcjGa1ibQQJEPqk_6Bhsz7Oi3ZYdRadpfYrWYno9zfFsbxhiWGM9YNw8tG_yCL9vT048yCDbtFfvWU5npW4aG9Uuo-luYjt4PrCzEVfu0F6ZppI_jXg6ypOjY.png)
+
+A próxima página fornecerá um token de API que você deseja manter à mão. Nós vamos fazer uso dele em breve.
 https://medium.com/@gpiress/criando-um-bot-no-slack-dd1895cc6422#.cbs9hpql0
