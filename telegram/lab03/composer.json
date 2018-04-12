@@ -1,0 +1,5 @@
+{
+    "require": {
+        "eleirbag89/telegrambotphp": "^1.3"
+    }
+}

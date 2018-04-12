@@ -23,15 +23,14 @@ function logIt($message){
 
 
 $config = [
-	"telegram" => [
-		"token" => "TOKEN"
-	],
 	'facebook' => [
-		'token' => 'YOUR-FACEBOOK-PAGE-TOKEN',
-		'app_secret' => 'YOUR-FACEBOOK-APP-SECRET-HERE',
-		'verification'=>'MY_SECRET_VERIFICATION_TOKEN',
+		'token' => 'EAAByYnBlfsMBAI3Vc5EY30coTjaGKWJnkfPjQKR93lTFcFcMpzkzuMtEEiGD8zeZCSlRmTZCax5ItrKzRigV63jN0mVOgB2QZB5arEujvwLXZC4FZBMG1av2Oa1LfO3KfPyfDiTq5ENDGl2HOpIAmeHuD5C1PYTNiC2Vy0kIXFpI477wQGDZCZB',
+		'app_secret' => '4b6d2914a6e78c1f2aa2fcbfda08442b',
+		'verification'=>'curso_bots'
 	]
 ];
+
+//$config  = [];
 
 // Load the driver(s) you want to use
 DriverManager::loadDriver(\BotMan\Drivers\Telegram\TelegramDriver::class);
@@ -45,6 +44,7 @@ $botman = BotManFactory::create($config);
 $botman->hears('hello', function (BotMan $bot) {
 	$bot->reply('Hello yourself.');
 });
+
 
 // Start listening
 $botman->listen();

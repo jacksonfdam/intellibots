@@ -1,5 +1,5 @@
 <?php
-define('BOT_TOKEN', '');
+define('BOT_TOKEN', 'BOT_TOKEN_ID');
 define('API_URL', 'https://api.telegram.org/bot'.BOT_TOKEN.'/');
 define('WEATHER_API_URL', 'http://api.openweathermap.org/data/2.5/weather?appid=e036195e96fe8ea62f54d5170035147b&q=');
 ini_set("allow_url_fopen", true);

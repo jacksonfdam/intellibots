@@ -1,6 +1,6 @@
 <?php
 
-define('BOT_TOKEN', '12345678:replace-me-with-real-token');
+define('BOT_TOKEN', 'BOT_TOKEN_ID');
 define('API_URL', 'https://api.telegram.org/bot'.BOT_TOKEN.'/');
 
 function apiRequestWebhook($method, $parameters) {
@@ -139,7 +139,7 @@ function processMessage($message) {
 }
 
 
-define('WEBHOOK_URL', 'https://gentle-beyond-36235.herokuapp.com/');
+define('WEBHOOK_URL', 'https://9fe3c01d.ngrok.io/intellibots/telegram/lab01/');
 
 if (php_sapi_name() == 'cli') {
 	/* if run from console, set or delete webhook */

@@ -40,8 +40,8 @@ class Tempo extends \PhpSlackBot\Command\BaseCommand {
 }
 
 $bot = new Bot();
-$bot->setToken('xoxb-344837546034-lBZNQUlsogVaurEIdcaAkdUI'); 
+$bot->setToken('xoxb-345470068485-mvpn42dQmu3Q26ubKiVF1dZR'); 
 $bot->loadCommand(new MeuNovoComando());
-$bot->loadCommand(new Tempo());
+//$bot->loadCommand(new Tempo());
 $bot->loadInternalCommands(); 
 $bot->run();
