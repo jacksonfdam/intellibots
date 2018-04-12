@@ -1,4 +1,4 @@
-###Google compra startup de reconhecimento de fala natural Api.ai
+### Google compra startup de reconhecimento de fala natural Api.ai
 Leia mais em http://www.bitmag.com.br/2016/09/google-compra-startup-de-reconhecimento-de-fala-natural-api-ai/#7OPClq0GgtkaWMhb.99
 
 O Google comprou mais uma startup. Desta vez, a desenvolvedora de um aplicativo que funciona como assistente conversacional, com ferramentas de reconhecimento de fala e compreensão de linguagem natural Api.ai e mais de 20 milhões de usuários. Os termos do negócio não foram revelados, mas, de acordo com post do vice-presidente de engenharia do Google, Scott Huffman, “API.AI tem uma trajetória comprovada de auxílio aos desenvolvedores a desenhar, construir e melhorar constantemente suas interfaces conversacionais. Mais de 60 mil desenvolvedores estão usando Api.ai para construir experiências conversacionais para ambientes como Slack, Facebook Messenger e Kik, para nomear apenas alguns”. Huffman acredita que a plataforma de interface conversacional ajudará o Google a “empoderar desenvolvedores para que continuem construindo ótimas interfaces de linguagem natural”.
@@ -131,3 +131,59 @@ Os top 7 casos de messenger bots para marcas (e por que eles são incríveis)
 - http://www.botsbrasil.com.br/
 
 
+
+# DialogFlow PHP sdk
+https://github.com/iboldurev/dialogflow
+Unofficial php sdk for Dialogflow [https://dialogflow.com/](https://dialogflow.com/)
+
+```php
+    <?php
+    
+    require_once 'vendor/autoload.php'; //autoload das dependências
+    include_once 'credentials.php'; //arquivo php com uma variável $apiKey que é a chave da sua API do Dialogflow
+    
+    use Dialogflow\Client; //use na classe Client
+    
+    use Dialogflow\Model\Query; //use na classe Query
+    use Dialogflow\Method\QueryApi; //use na classe QueryApi
+    
+    try { //início do bloco de try/catch
+        $client = new Client($apiKey); //iniciando um client Dialogflow
+        $queryApi = new QueryApi($client);//iniciando uma query do Dialogflow
+    
+        $meaning = $queryApi->extractMeaning($argv[1], [
+            'sessionId' => '1234567890',
+            'lang' => 'pt-BR',
+        ]); //definindo os dados da chamada ao Dialogflow (seria uma simulação de conversa) passamos o primeiro argumento da chamada PHP, uma sessionId aleatória e a linguagem que iremos utilizar. No caso pt-br
+        $response = new Query($meaning); //realizando a chamada de query
+        print_r($response); //retornando o objeto de resposta para estudo
+    } catch (\Exception $error) { 
+        echo $error->getMessage(); //retorna o erro em caso de erro.
+    }
+````
+Então, vamos fazer no terminal:
+	
+	php dialogflow.php "quero comprar um ingresso"
+
+## Guia completo para criar o seu Messenger Chatbot, usando IBM Watson e API Connect
+
+## Watson Conversation
+
+A API Conversation foi a última a ser lançada no  [Bluemix](https://console.bluemix.net/?cm_sp=dwbrazil-bluemix-_-criando-chat-bots-ibm-watson-pt1-_-article)  em julho. Os devs do Watson resolveram juntar algumas funcionalidades do Natural Language Classifier (NLC), do Dialog e novidades com uma interface bem simples que permite que o cara que não é de TI possa criar conteúdo para o seu Bot.
+
+https://www.ibm.com/developerworks/br/cloud/library/criando-chat-bots-ibm-watson-pt1/index.html
+https://pt.linkedin.com/pulse/guia-completo-para-criar-o-seu-messenger-chatbot-usando-davi-cunha
+https://drive.google.com/file/d/0B6zJBJLRNCVxRXB6Ukp4a0lpZXc/view
+
+### Construindo Chat Bots com a plataforma Microsoft Bot Framework
+
+LUIS - [Language Understanding Intelligent Service](https://www.microsoft.com/cognitive-services/en-us/language-understanding-intelligent-service-luis) - é uma API de Machine Learning que permite adicionar processamento de linguagem natural em aplicações, entendendo e interpretando linguagens contextualmente. É uma das APIs presentes no [Microsoft Cognitive Services](https://www.microsoft.com/cognitive-services).
+
+https://msdn.microsoft.com/pt-br/communitydocs/visualstudioalm/chat-bots
+https://docs.microsoft.com/en-us/azure/bot-service/rest-api/bot-framework-rest-connector-api-reference
+
+### UX Best Practices for Bot applications
+
+This book is a guide for some common best practices for bot interactions and is intended to be applicable on any platform including Skype, Facebook Messenger, Slack, and others that will emerge over time.
+
+https://legacy.gitbook.com/book/fernandobrs/ux-best-practices-for-bot-applications/details
