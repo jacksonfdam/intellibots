@@ -56,3 +56,18 @@ Para saber mais sobre o @BotFather, acesse a documentação do Telegram que fala
 
 
 > DICA 2: A URL do Webhook tem que ser obrigatoriamente uma url segura (https), seu o seu domínio não possui uma conexão segura configurada, você pode tentar usar a do seu servidor, caso for uma conta compartilhada.
+
+
+Agora faremos com que o bot responda aos comandos enviados pelo usuário de forma automática. Para isso, será necessário conhecermos uma funcionalidade da  [API do Telegram](https://core.telegram.org/bots/api)  chamada Webhook.
+
+O Webhook serve para integrar o bot com a página que define o seu comportamento. Dessa forma, quando um comando é enviado ao bot, a API do Telegram dispara um evento, o qual despacha a mensagem via HTTP para URL da página configurada junto ao Webhook.
+
+Agora que já conhecemos o Webhook, podemos partir para setar o Webhook do nosso bot. Para isso, a API do Telegram possui o método  `setWebhook`. Ele recebe como parâmetro a URL da página que “responde” pelo bot. Para que essa URL seja considerada válida pelo método  `setWebhook`, é preciso que ela suporte o protocolo HTTPS. Sabendo disso, para chamar o método  `setWebhook`  é só abrir o  _browser_  e digitar o seguinte:
+
+[https://api.telegram.org/bot(SEU_TOKEN)/setwebhook?url=https://(SUA_URL)/seubot.php](https://api.telegram.org/bot(SEU_TOKEN)/setwebhook?url=https://(SUA_URL)/seubot.php)
+
+Após acessar a URL na formatação acima, a resposta da API do Telegram será a seguinte:
+
+{“ok”:true,”result”:true,”description”:”Webhook was set”}
+
+Caso seja necessário remover o Webhook, basta usar a seguinte URL: [https://api.telegram.org/bot(SEU_TOKEN)/setwebhook?url=](https://api.telegram.org/bot%28SEU_TOKEN%29/setwebhook?url=%28Aqui)
