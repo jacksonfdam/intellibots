@@ -27,5 +27,8 @@ Dê ao seu bot um nome inteligente. Ou, se você não tiver inspiração, sinta-
 
 ![](https://www.twilio.com/blog/wp-content/uploads/2017/02/pq1aXzKShVuuaTlxcjGa1ibQQJEPqk_6Bhsz7Oi3ZYdRadpfYrWYno9zfFsbxhiWGM9YNw8tG_yCL9vT048yCDbtFfvWU5npW4aG9Uuo-luYjt4PrCzEVfu0F6ZppI_jXg6ypOjY.png)
 
-A próxima página fornecerá um token de API que você deseja manter à mão. Nós vamos fazer uso dele em breve.
-https://medium.com/@gpiress/criando-um-bot-no-slack-dd1895cc6422#.cbs9hpql0
+A próxima página fornecerá um token de API que você deseja manter à mão. 
+
+
+Enfim, são mil possibilidades para um ajudante automatizado! Faça coisas
+relevantes para você e seu time, pense principalmente nas suas tarefas repetitivas ou em dúvidas que você tenha sempre!!
