@@ -4,7 +4,9 @@
 
 ## JACKSON FERREIRA DE ANDRADE MAFRA
 
-Desenvolvedor há 15 anos com background em projetos de e-commerce e real estate, desde 2009 com interesses focados para o desenvolvimento de interfaces móveis e aplicações MEAP.
+### Quem sou eu?
+
+Oi! Eu sou o Jackson! Eu gosto de me descrever como desenvolvedor e líder técnico, com um conhecimento muito forte em desenvolvimento web e móvel. Desde 1998 desenvolvo websites e aplicações web, mas em 2009 mudei minha carreira para o desenvolvimento mobile.
 
 Me chama lá...
 
