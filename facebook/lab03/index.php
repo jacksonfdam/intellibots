@@ -1,6 +1,4 @@
 <?php
-$verify_token = ""; // Verify token
-$token = ""; // Page token
 
 if (file_exists(__DIR__.'/config.php')) {
     $config = include __DIR__.'/config.php';
@@ -23,7 +21,6 @@ use intellibots\Messages\Address;
 use intellibots\Messages\Summary;
 use intellibots\Messages\Adjustment;
 
-// Make Bot Instance
 $bot = new FbBotApp($token);
 if (!empty($_REQUEST['local'])) {
     $message = new ImageMessage(1585388421775947, dirname(__FILE__).'/Messages-256.png');
@@ -33,49 +30,37 @@ if (!empty($_REQUEST['local'])) {
     $res = $bot->send($message);
     echo '<pre>', print_r($res), '</pre>';
 }
-// Receive something
 if (!empty($_REQUEST['hub_mode']) && $_REQUEST['hub_mode'] == 'subscribe' && $_REQUEST['hub_verify_token'] == $verify_token) {
-    // Webhook setup request
     echo $_REQUEST['hub_challenge'];
 } else {
-    // Other event
     $data = json_decode(file_get_contents("php://input"), true, 512, JSON_BIGINT_AS_STRING);
     if (!empty($data['entry'][0]['messaging'])) {
         foreach ($data['entry'][0]['messaging'] as $message) {
-            // Skipping delivery messages
             if (!empty($message['delivery'])) {
                 continue;
             }
             
             
-            // skip the echo of my own messages
             if (($message['message']['is_echo'] == "true")) {
                 continue;
             }
             
             $command = "";
-            // When bot receive message from user
             if (!empty($message['message'])) {
                 $command = $message['message']['text'];
-            // When bot receive button click from user
             } else if (!empty($message['postback'])) {
                 $command = $message['postback']['payload'];
             }
-            // Handle command
             switch ($command) {
-                // When bot receive "text"
                 case 'text':
-                    $bot->send(new Message($message['sender']['id'], 'This is a simple text message.'));
+                    $bot->send(new Message($message['sender']['id'], 'Esta é uma mensagem de texto simples.'));
                     break;
-                // When bot receive "image"
                 case 'image':
-                    $bot->send(new ImageMessage($message['sender']['id'], 'https://developers.facebook.com/images/devsite/fb4d_logo-2x.png'));
+                    $bot->send(new ImageMessage($message['sender']['id'], 'https://cdn.dribbble.com/users/100203/screenshots/2645012/botlist-logo_1x.png'));
                     break;
-                // When bot receive "image"
                 case 'local image':
                     $bot->send(new ImageMessage($message['sender']['id'], dirname(__FILE__).'/Messages-256.png'));
                     break;
-                // When bot receive "profile"
                 case 'profile':
                     $user = $bot->userProfile($message['sender']['id']);
                     $bot->send(new StructuredMessage($message['sender']['id'],
@@ -87,58 +72,55 @@ if (!empty($_REQUEST['hub_mode']) && $_REQUEST['hub_mode'] == 'subscribe' && $_R
                         ]
                     ));
                     break;
-                // When bot receive "button"
                 case 'button':
                   $bot->send(new StructuredMessage($message['sender']['id'],
                       StructuredMessage::TYPE_BUTTON,
                       [
-                          'text' => 'Choose category',
+                          'text' => 'Escolha sua Categoria',
                           'buttons' => [
-                              new MessageButton(MessageButton::TYPE_POSTBACK, 'First button'),
-                              new MessageButton(MessageButton::TYPE_POSTBACK, 'Second button'),
-                              new MessageButton(MessageButton::TYPE_POSTBACK, 'Third button')
+                              new MessageButton(MessageButton::TYPE_POSTBACK, 'Categoria 01'),
+                              new MessageButton(MessageButton::TYPE_POSTBACK, 'Categoria 02'),
+                              new MessageButton(MessageButton::TYPE_POSTBACK, 'Categoria 03')
                           ]
                       ]
                   ));
                 break;
-                // When bot receive "generic"
                 case 'generic':
                     $bot->send(new StructuredMessage($message['sender']['id'],
                         StructuredMessage::TYPE_GENERIC,
                         [
                             'elements' => [
-                                new MessageElement("First item", "Item description", "", [
-                                    new MessageButton(MessageButton::TYPE_POSTBACK, 'First button'),
+                                new MessageElement("Primeiro item", "Descrição do item", "", [
+                                    new MessageButton(MessageButton::TYPE_POSTBACK, 'Primeiro botão'),
                                     new MessageButton(MessageButton::TYPE_WEB, 'Web link', 'http://facebook.com')
                                 ]),
-                                new MessageElement("Second item", "Item description", "", [
-                                    new MessageButton(MessageButton::TYPE_POSTBACK, 'First button'),
-                                    new MessageButton(MessageButton::TYPE_POSTBACK, 'Second button')
+                                new MessageElement("Segundo item", "Descrição do item", "", [
+                                    new MessageButton(MessageButton::TYPE_POSTBACK, 'Primeiro botão'),
+                                    new MessageButton(MessageButton::TYPE_POSTBACK, 'Segundo botão')
                                 ]),
-                                new MessageElement("Third item", "Item description", "", [
-                                    new MessageButton(MessageButton::TYPE_POSTBACK, 'First button'),
-                                    new MessageButton(MessageButton::TYPE_POSTBACK, 'Second button')
+                                new MessageElement("Terceiro item", "Descrição do item", "", [
+                                    new MessageButton(MessageButton::TYPE_POSTBACK, 'Primeiro botão'),
+                                    new MessageButton(MessageButton::TYPE_POSTBACK, 'Segundo botão')
                                 ])
                             ]
                         ]
                     ));
                     
                 break;
-                // When bot receive "receipt"
                 case 'receipt':
                     $bot->send(new StructuredMessage($message['sender']['id'],
                         StructuredMessage::TYPE_RECEIPT,
                         [
-                            'recipient_name' => 'Fox Brown',
+                            'recipient_name' => 'Jackson Mafra',
                             'order_number' => rand(10000, 99999),
-                            'currency' => 'USD',
+                            'currency' => 'BRL',
                             'payment_method' => 'VISA',
                             'order_url' => 'http://facebook.com',
                             'timestamp' => time(),
                             'elements' => [
-                                new MessageReceiptElement("First item", "Item description", "", 1, 300, "USD"),
-                                new MessageReceiptElement("Second item", "Item description", "", 2, 200, "USD"),
-                                new MessageReceiptElement("Third item", "Item description", "", 3, 1800, "USD"),
+                                new MessageReceiptElement("Produto 01", "Descrição do produto", "", 1, 300, "BRL"),
+                                new MessageReceiptElement("Produto 02", "Descrição do produto", "", 2, 200, "BRL"),
+                                new MessageReceiptElement("Produto 03", "Descrição do produto", "", 3, 1800, "BRL"),
                             ],
                             'address' => new Address([
                                 'country' => 'US',
@@ -156,11 +138,11 @@ if (!empty($_REQUEST['hub_mode']) && $_REQUEST['hub_mode'] == 'subscribe' && $_R
                             ]),
                             'adjustments' => [
                                 new Adjustment([
-                                    'name' => 'New Customer Discount',
+                                    'name' => 'Desconto de 20%',
                                     'amount' => 20
                                 ]),
                                 new Adjustment([
-                                    'name' => '$10 Off Coupon',
+                                    'name' => 'Disconto de 10%',
                                     'amount' => 10
                                 ])
                             ]
@@ -169,17 +151,16 @@ if (!empty($_REQUEST['hub_mode']) && $_REQUEST['hub_mode'] == 'subscribe' && $_R
                 break;
                 case 'set menu':
                     $bot->setPersistentMenu([
-                        new MessageButton(MessageButton::TYPE_WEB, "First link", "http://yandex.ru"),
-                        new MessageButton(MessageButton::TYPE_WEB, "Second link", "http://google.ru")
+                        new MessageButton(MessageButton::TYPE_WEB, "Primeiro link", "http://google.com"),
+                        new MessageButton(MessageButton::TYPE_WEB, "Segundo link", "http://yahoo.com")
                     ]);
                 break;
                 case 'delete menu':
                     $bot->deletePersistentMenu();
                 break;
-                // Other message received
                 default:
                     if (!empty($command)) 
-                    $bot->send(new Message($message['sender']['id'], 'Sorry. I don’t understand you.'));
+                    $bot->send(new Message($message['sender']['id'], 'Desculpe. Eu não entendo você.'));
             }
         }
     }

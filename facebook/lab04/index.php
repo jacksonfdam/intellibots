@@ -27,9 +27,9 @@ $config = [
 		"token" => "TOKEN"
 	],
 	'facebook' => [
-		'token' => 'YOUR-FACEBOOK-PAGE-TOKEN',
-		'app_secret' => 'YOUR-FACEBOOK-APP-SECRET-HERE',
-		'verification'=>'MY_SECRET_VERIFICATION_TOKEN',
+		'token' => 'BOT_TOKEN',
+		'app_secret' => 'FACEBOOK-APP-SECRET',
+		'verification'=>'VERIFY_TOKEN',
 	]
 ];
 
@@ -42,8 +42,16 @@ DriverManager::loadDriver(\BotMan\Drivers\Web\WebDriver::class);
 $botman = BotManFactory::create($config);
 
 // Give the bot something to listen for.
-$botman->hears('hello', function (BotMan $bot) {
-	$bot->reply('Hello yourself.');
+$botman->hears('ola', function (BotMan $bot) {
+	$bot->reply('Olá usuário');
+});
+
+$botman->hears('Eu quero ([0-9]+) itens', function ($bot, $number) {
+    $bot->reply('Você terá: '.$number.' items');
+});
+
+$botman->fallback(function($bot) {
+    $bot->reply('Desculpe, eu não entendi esses comandos. Aqui está uma lista de comandos que eu entendo: ...');
 });
 
 // Start listening

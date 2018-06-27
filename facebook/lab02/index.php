@@ -7,7 +7,7 @@ date_default_timezone_set('America/Sao_Paulo');
 https://developers.facebook.com/docs/messenger-platform/send-api-reference/templates
 
 */
-define('BOT_TOKEN', "EAARnxkZCzY10BAAmBwMZC22ADQbgPzxU2berWP4iHF202KrSkbCf05bh4zr9TgAzufCly7arjHiAqmyfZBHnZBvsEvfYs5J2TElDoZB8Ir4NHoVebZC9pDFqGZB14rY1z4HYtL3BhzfXhSUbjJO6WCY8VHWXQrvJx8vq1wSpU2WEAZDZD");
+define('BOT_TOKEN', "");
 define('VERIFY_TOKEN', "curso_intellibots");
 define('API_URL', 'https://graph.facebook.com/v2.6/me/messages?access_token='.BOT_TOKEN);
 
