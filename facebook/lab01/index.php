@@ -18,7 +18,7 @@
 
 	/*
 	Teste Tambem:
-	curl -X POST "https://graph.facebook.com/v2.6/me/subscribed_apps?access_token=EAAaki53jQwMBAGgy1sDUkjR0tQOyDFcVbKk1vavact1wiQ1dszOrAPiUuZCzdOL8bZCoVDdO9KpgqRyfVXSUEySUYwBgG6pijLRg0UC5AFG3MIxUMOAJarKPfvbBq58uIWXwdRZAxQeCACfhCCYbKQ2ccAvIPGVZAZAIXlcFJDAZDZD"
+	curl -X POST "https://graph.facebook.com/v2.6/me/subscribed_apps?access_token=<BOT_TOKEN>"
 
 	*/
 	$hub_verify_token = null;

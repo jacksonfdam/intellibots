@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <title>JS Bin</title>
+  <title>Meu Bot de Atendimento</title>
 </head>
 <body>
 
@@ -17,10 +17,11 @@ https://botman.io/2.0/web-widget
 -->
 <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
 <script>
-var botmanWidget = {
-    frameEndpoint: 'https://60ac1dcd.ngrok.io/intellibots/botman/lab01/chat.html',
-    chatServer:'https://60ac1dcd.ngrok.io/intellibots/botman/lab01/index.php',
-};
+	var APP_URL =  window.location.href.replace('portal.html','');
+	var botmanWidget = {
+	    frameEndpoint: APP_URL + 'chat.html',
+	    chatServer:APP_URL + 'index.php',
+	};
 </script>
 <script src='https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/js/widget.js'></script>
 </body>

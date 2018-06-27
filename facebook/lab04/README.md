@@ -1,4 +1,3 @@
-
 # Intellibots
 ## Facebook
 ### Lab 04

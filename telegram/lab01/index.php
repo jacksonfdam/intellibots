@@ -2,6 +2,7 @@
 
 define('BOT_TOKEN', 'BOT_TOKEN_ID');
 define('API_URL', 'https://api.telegram.org/bot'.BOT_TOKEN.'/');
+define('WEBHOOK_URL', 'WEBHOOK_URL');
 
 function apiRequestWebhook($method, $parameters) {
 	if (!is_string($method)) {
@@ -122,31 +123,27 @@ function processMessage($message) {
 		$text = $message['text'];
 
 		if (strpos($text, "/start") === 0) {
-			apiRequestJson("sendMessage", array('chat_id' => $chat_id, "text" => 'Hello', 'reply_markup' => array(
-				'keyboard' => array(array('Hello', 'Hi')),
+			apiRequestJson("sendMessage", array('chat_id' => $chat_id, "text" => 'Olá', 'reply_markup' => array(
+				'keyboard' => array(array('Olá', 'Oi')),
 				'one_time_keyboard' => true,
 				'resize_keyboard' => true)));
-		} else if ($text === "Hello" || $text === "Hi") {
-			apiRequest("sendMessage", array('chat_id' => $chat_id, "text" => 'Nice to meet you'));
+		} else if ($text === "Olá" || $text === "Oi") {
+			apiRequest("sendMessage", array('chat_id' => $chat_id, "text" => 'Prazer em conhecer você.'));
 		} else if (strpos($text, "/stop") === 0) {
 			/* stop now */
 		} else {
-			apiRequestWebhook("sendMessage", array('chat_id' => $chat_id, "reply_to_message_id" => $message_id, "text" => 'Cool'));
+			apiRequestWebhook("sendMessage", array('chat_id' => $chat_id, "reply_to_message_id" => $message_id, "text" => 'Legal'));
 		}
 	} else {
-		apiRequest("sendMessage", array('chat_id' => $chat_id, "text" => 'I understand only text messages'));
+		apiRequest("sendMessage", array('chat_id' => $chat_id, "text" => 'Eu entendo apenas mensagens de texto'));
 	}
 }
-
-
-define('WEBHOOK_URL', 'https://9fe3c01d.ngrok.io/intellibots/telegram/lab01/');
 
 if (php_sapi_name() == 'cli') {
 	/* if run from console, set or delete webhook */
 	apiRequest('setWebhook', array('url' => isset($argv[1]) && $argv[1] == 'delete' ? '' : WEBHOOK_URL));
 	exit;
 }
-
 
 $content = file_get_contents("php://input");
 $update = json_decode($content, true);
@@ -155,6 +152,7 @@ if (!$update) {
 	/* receive wrong update, must not happen */
 	exit;
 }
+
 if (isset($update["message"])) {
 	processMessage($update["message"]);
 }
