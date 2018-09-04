@@ -1,7 +1,7 @@
 	<?php
 
-	setlocale(LC_TIME, "pt_BR");
-	date_default_timezone_set('America/Sao_Paulo');
+	//setlocale(LC_TIME, "pt_BR");
+	//date_default_timezone_set('America/Sao_Paulo');
 
 	$meses = array (1 => "Janeiro", 2 => "Fevereiro", 3 => "Março", 4 => "Abril", 5 => "Maio", 6 => "Junho", 7 => "Julho", 8 => "Agosto", 9 => "Setembro", 10 => "Outubro", 11 => "Novembro", 12 => "Dezembro");
 	$diasdasemana = array (1 => "Segunda-Feira",2 => "Terça-Feira",3 => "Quarta-Feira",4 => "Quinta-Feira",5 => "Sexta-Feira",6 => "Sábado",0 => "Domingo");
